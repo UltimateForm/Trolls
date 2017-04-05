@@ -69,12 +69,14 @@ class Troll:
         else:
             raise ValueError("Specified class does not exist!")
 
-USR_NAME = str(input("Name your troll: "))
-USR_TROLL = Troll(USR_NAME)
-print("Do you wish to init your class right away(y/n)? \n\tInit'ing will raise your class's attribute by 60% and speedup exp gain from your class's actions")
-if readchar.readchar() == 'y':
-    Troll.start_classing(USR_TROLL)
-print("test over")
+
+if __name__ == "__main__":
+    USR_NAME = str(input("Name your troll: "))
+    USR_TROLL = Troll(USR_NAME)
+    print("Do you wish to init your class right away(y/n)? \n\tInit'ing will raise your class's attribute by 60% and speedup exp gain from your class's actions")
+    if readchar.readchar() == 'y':
+        Troll.start_classing(USR_TROLL)
+    print("test over")
 
 # while(true):
     
