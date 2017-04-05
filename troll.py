@@ -15,7 +15,8 @@
 
 # print(len(newCollection), " over") #dont forget len(collection) to get lenght
 import readchar
-from pygame import *
+import dialog
+import random
 
 class Troll:
     """Handles trolls and stuffs"""
@@ -35,7 +36,15 @@ class Troll:
 
     def init_class(self, troll_class: str):
         """Initiates Troll class, modifying atributes"""
-        if self.troll_class == "none":
+        if self.troll_class == "none" and troll_class is not None:
+            if troll_class == "random":
+                r_int = random.randint(1,3)
+                if r_int == 1:
+                    troll_class = Troll.TROLL_ROGUE
+                elif r_int == 2:
+                    troll_class = Troll.TROLL_SORCERER
+                elif r_int == 3:
+                    troll_class = Troll.TROLL_WARRIOR
             self.troll_class = troll_class
             if troll_class == Troll.TROLL_ROGUE:
                 self.dexterly *= 1.6
@@ -46,7 +55,7 @@ class Troll:
             else:
                 raise ValueError("Specified class does not exist!")
         else:
-            print("troll is already classed")
+            print("troll is already classed or argument is none")
 
     @classmethod
     def create_classed_troll(cls, troll_class: str, troll_name: str):
@@ -68,6 +77,14 @@ class Troll:
             troll.init_class(Troll.TROLL_SORCERER)
         else:
             raise ValueError("Specified class does not exist!")
+    @classmethod
+    def level_to(cls, arg_troll, level, mult=1.2, mag_mult=1, dex_mult=1, str_mult=1):
+        for i in range(level - arg_troll.level):
+            arg_troll.strenght *= mult if arg_troll.troll_class == Troll.TROLL_WARRIOR else str_mult
+            arg_troll.dexterly *= mult if arg_troll.troll_class == Troll.TROLL_ROGUE else dex_mult
+            arg_troll.magic *= mult if arg_troll.troll_class == Troll.TROLL_SORCERER else mag_mult
+            arg_troll.level+=1
+
 
 
 if __name__ == "__main__":
