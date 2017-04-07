@@ -7,3 +7,5 @@ def dialog(**kwargs):
     if kwargs.get("input"):
         usr_input = str(input())
         return usr_input
+def separate():
+    print("============")

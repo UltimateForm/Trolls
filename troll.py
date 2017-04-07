@@ -17,19 +17,21 @@
 import readchar
 import dialog
 import random
+import game
 
+TROLL_ROGUE = "troll:rogue"
+TROLL_WARRIOR = "troll:warrior"
+TROLL_SORCERER = "troll:sorc"
 class Troll:
     """Handles trolls and stuffs"""
-    TROLL_ROGUE = "troll:rogue"
-    TROLL_WARRIOR = "troll:warrior"
-    TROLL_SORCERER = "troll:sorc"
-
     def __init__(self, name: str):
         self.name = str(name)
         self.level = 1
         self.dexterly = 1
         self.strenght = 1
         self.magic = 1
+        self.intelligence = 1
+        self.armor = 1
         self.life = 100
         self.troll_class = "none"
         self.exp = 0.0
@@ -40,17 +42,17 @@ class Troll:
             if troll_class == "random":
                 r_int = random.randint(1,3)
                 if r_int == 1:
-                    troll_class = Troll.TROLL_ROGUE
+                    troll_class = TROLL_ROGUE
                 elif r_int == 2:
-                    troll_class = Troll.TROLL_SORCERER
+                    troll_class = TROLL_SORCERER
                 elif r_int == 3:
-                    troll_class = Troll.TROLL_WARRIOR
+                    troll_class = TROLL_WARRIOR
             self.troll_class = troll_class
-            if troll_class == Troll.TROLL_ROGUE:
+            if troll_class == TROLL_ROGUE:
                 self.dexterly *= 1.6
-            elif troll_class == Troll.TROLL_SORCERER:
+            elif troll_class == TROLL_SORCERER:
                 self.magic *= 1.6
-            elif troll_class == Troll.TROLL_WARRIOR:
+            elif troll_class == TROLL_WARRIOR:
                 self.strenght *= 1.6
             else:
                 raise ValueError("Specified class does not exist!")
@@ -70,21 +72,25 @@ class Troll:
         print("Troll types: \n1 : Warrior \n2 : Rogue \n3 : Sorcerer")
         usr_class = int(input("Select your class(1-3) and press enter: "))
         if usr_class == 1:
-            troll.init_class(Troll.TROLL_WARRIOR)
+            troll.init_class(TROLL_WARRIOR)
         elif usr_class == 2:
-            troll.init_class(Troll.TROLL_ROGUE)
+            troll.init_class(TROLL_ROGUE)
         elif usr_class == 3:
-            troll.init_class(Troll.TROLL_SORCERER)
+            troll.init_class(TROLL_SORCERER)
         else:
             raise ValueError("Specified class does not exist!")
     @classmethod
-    def level_to(cls, arg_troll, level, mult=1.2, mag_mult=1, dex_mult=1, str_mult=1):
+    def level_to(cls, arg_troll, level, mult=1.1, mag_mult=1, dex_mult=1, str_mult=1):
         for i in range(level - arg_troll.level):
-            arg_troll.strenght *= mult if arg_troll.troll_class == Troll.TROLL_WARRIOR else str_mult
-            arg_troll.dexterly *= mult if arg_troll.troll_class == Troll.TROLL_ROGUE else dex_mult
-            arg_troll.magic *= mult if arg_troll.troll_class == Troll.TROLL_SORCERER else mag_mult
+            arg_troll.strenght *= mult if arg_troll.troll_class == TROLL_WARRIOR else str_mult
+            arg_troll.dexterly *= mult if arg_troll.troll_class == TROLL_ROGUE else dex_mult
+            arg_troll.magic *= mult if arg_troll.troll_class == TROLL_SORCERER else mag_mult
+            arg_troll.life *= 1.11 if arg_troll.troll_class == TROLL_WARRIOR else 1.1
             arg_troll.level+=1
 
+    @classmethod
+    def apply_npc_tier(cls, npc_troll):
+        pass
 
 
 if __name__ == "__main__":
@@ -93,6 +99,9 @@ if __name__ == "__main__":
     print("Do you wish to init your class right away(y/n)? \n\tInit'ing will raise your class's attribute by 60% and speedup exp gain from your class's actions")
     if readchar.readchar() == 'y':
         Troll.start_classing(USR_TROLL)
+
+    game.game.troll_info(USR_TROLL)
+    game.game.serialize(USR_TROLL)
     print("test over")
 
 # while(true):
