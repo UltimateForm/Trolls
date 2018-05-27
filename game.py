@@ -1,12 +1,10 @@
 import dialog as dlg
 import random
 import bunch
-from bunch.bunch import bunchify
 import json
 import platform
 import os
 import glob
-
 
 
 
@@ -81,7 +79,7 @@ class game ():
         #     print(json_file)
         if os.path.isfile(json_path):
             troll_dict = json.loads (open (json_path).read ())
-            mtroll = bunchify (troll_dict)
+            mtroll = bunch.bunchify (troll_dict)
             # dlg.dialog(msg=troll_dict.get("name") + str(troll_dict.get("life:")))
             # game.troll_info(mtroll)
             return mtroll
@@ -96,4 +94,5 @@ class game ():
         return game.deserialize(game.BOSS_DATA + file_name)
 
 game.start()
-game.troll_info(game.get_boss("Bartok"))
+if __name__ == "__main__":
+    game.troll_info(game.get_boss("Bartok"))
