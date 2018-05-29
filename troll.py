@@ -18,6 +18,7 @@ import dialog
 import random
 import sys
 import game
+import math
 
 TROLL_ROGUE = "troll:rogue"
 TROLL_WARRIOR = "troll:warrior"
@@ -85,20 +86,21 @@ class Troll:
 
     def level_up(self):
         if self.troll_class == TROLL_WARRIOR:
-            Troll.level_to(self, self.level+1, str_mult=1.15, mag_mult=1,dex_mult=1.125, intel_mult=1, life_mult=1.16)
+            Troll.level_to(self, self.level+1, str_mult=1.5, mag_mult=0, dex_mult=1.25, intel_mult=0, life_mult=1.25)
         elif self.troll_class == TROLL_SORCERER:
-            Troll.level_to(self, self.level+1, str_mult=1, mag_mult=1.14, dex_mult=1, intel_mult=1.135, life_mult=1.13)
+            Troll.level_to(self, self.level+1, str_mult=0, mag_mult=1.5, dex_mult=0, intel_mult=1.4, life_mult=1.1)
         elif self.troll_class == TROLL_ROGUE:
-            Troll.level_to(self, self.level+1, str_mult=1.105, mag_mult=1, dex_mult=1.14, intel_mult=1.1, life_mult=1.14)
+            Troll.level_to(self, self.level+1, str_mult=1.3, mag_mult=0, dex_mult=1.4, intel_mult=1.1, life_mult=1.2)
 
     @classmethod
     def level_to(cls, arg_troll, level, life_mult=1.25, mag_mult=1.1, dex_mult=1.1, str_mult=1.1, intel_mult = 1.1):
         for i in range(level - arg_troll.level):
-            arg_troll.strenght *= str_mult
-            arg_troll.dexterly *= dex_mult
-            arg_troll.magic *= mag_mult
-            arg_troll.intelligence *= intel_mult
-            arg_troll.life *= life_mult
+            l = arg_troll.level+1
+            arg_troll.strenght = math.pow(l, str_mult)
+            arg_troll.dexterly = math.pow(l, dex_mult)
+            arg_troll.magic = math.pow(l, mag_mult)
+            arg_troll.intelligence = math.pow(l, intel_mult)
+            arg_troll.life = math.pow(l, life_mult) * 10
             arg_troll.level += 1
 
     @classmethod
