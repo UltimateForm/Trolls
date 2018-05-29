@@ -38,7 +38,7 @@ class Troll:
         self.armor = 1
         self.life = 100
         self.troll_class = "none"
-        self.exp = 0.0
+        self.exp = 0
 
     def init_class(self, troll_class: str):
         """Initiates Troll class, modifying atributes"""
@@ -84,24 +84,26 @@ class Troll:
         else:
             raise ValueError("Specified class does not exist!")
 
-    def level_up(self):
+    def add_exp(self, exp):
+        self.exp += exp
+        self.level = int(math.sqrt(self.exp))
+        self.apply_level()
+
+    def apply_level(self):
         if self.troll_class == TROLL_WARRIOR:
-            Troll.level_to(self, self.level+1, str_mult=1.5, mag_mult=0, dex_mult=1.25, intel_mult=0, life_mult=1.25)
+            Troll.process_stats(self, str_mult=1.5, mag_mult=0, dex_mult=1.25, intel_mult=0, life_mult=1.25)
         elif self.troll_class == TROLL_SORCERER:
-            Troll.level_to(self, self.level+1, str_mult=0, mag_mult=1.5, dex_mult=0, intel_mult=1.4, life_mult=1.1)
+            Troll.process_stats(self, str_mult=0, mag_mult=1.5, dex_mult=0, intel_mult=1.4, life_mult=1.1)
         elif self.troll_class == TROLL_ROGUE:
-            Troll.level_to(self, self.level+1, str_mult=1.3, mag_mult=0, dex_mult=1.4, intel_mult=1.1, life_mult=1.2)
+            Troll.process_stats(self, str_mult=1.3, mag_mult=0, dex_mult=1.4, intel_mult=1.1, life_mult=1.2)
 
     @classmethod
-    def level_to(cls, arg_troll, level, life_mult=1.25, mag_mult=1.1, dex_mult=1.1, str_mult=1.1, intel_mult = 1.1):
-        for i in range(level - arg_troll.level):
-            l = arg_troll.level+1
-            arg_troll.strenght = math.pow(l, str_mult)
-            arg_troll.dexterly = math.pow(l, dex_mult)
-            arg_troll.magic = math.pow(l, mag_mult)
-            arg_troll.intelligence = math.pow(l, intel_mult)
-            arg_troll.life = math.pow(l, life_mult) * 10
-            arg_troll.level += 1
+    def process_stats(cls, arg_troll, life_mult=1.25, mag_mult=1.1, dex_mult=1.1, str_mult=1.1, intel_mult=1.1):
+        arg_troll.strenght = math.pow(arg_troll.level, str_mult)
+        arg_troll.dexterly = math.pow(arg_troll.level, dex_mult)
+        arg_troll.magic = math.pow(arg_troll.level, mag_mult)
+        arg_troll.intelligence = math.pow(arg_troll.level, intel_mult)
+        arg_troll.life = math.pow(arg_troll.level, life_mult) * 10
 
     @classmethod
     def apply_npc_tier(cls, npc_troll):
@@ -109,6 +111,7 @@ class Troll:
 
 
 if __name__ == "__main__":
+
     USR_NAME = str(input("Name your troll: "))
     USR_TROLL = Troll(USR_NAME)
     print(
@@ -116,9 +119,8 @@ if __name__ == "__main__":
     if sys.stdin.read(1) == 'y':
         Troll.start_classing(USR_TROLL)
 
-    testlevel = int(input("Test level>"))
-    for i in range(testlevel):
-        USR_TROLL.level_up()
+    testexp = float(input("Insert exp to add"))
+    USR_TROLL.add_exp(testexp)
     game.game.troll_info(USR_TROLL)
     game.game.serialize(USR_TROLL, game.TROLL_OTHER_DATA)
     print("test over")
