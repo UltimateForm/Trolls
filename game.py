@@ -44,12 +44,14 @@ class game():
                 os.mkdir(game.MAIN_DATA + "player/")
 
     @classmethod
-    def troll_info(cls, arg_troll):
+    def troll_info(cls, arg_troll: "troll.Troll"):
         dlg.separate()
         dlg.dialog(msg="Name: " + arg_troll.name)
+        dlg.dialog(msg="Level: " + str(arg_troll.level))
         dlg.dialog(msg="Class: " + arg_troll.troll_class)
-        dlg.dialog(msg="Strength: {0}".format(str(round(arg_troll.strenght, 1))))
-        dlg.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.dexterly, 1))))
+        dlg.dialog(msg="Strength: {0}".format(str(round(arg_troll.strength, 1))))
+        dlg.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.dexterity, 1))))
+        dlg.dialog(msg="Critical hit chance: {0}%".format(str(round(arg_troll.critical_hit_chance*100, 1))))
         dlg.dialog(msg="Magic: {0}".format(str(round(arg_troll.magic, 1))))
         dlg.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.intelligence, 1))))
         dlg.dialog(msg="Life: {0}".format(str(int(arg_troll.base_life))))
@@ -64,7 +66,7 @@ class game():
         """
         # trol_dict = {}
         # trol_dict = {"name": arg_troll.name , "class": arg_troll.troll_class , "level": arg_troll.level ,
-        #              "strenght": arg_troll.strenght , "dexterly": arg_troll.dexterly , "magic": arg_troll.magic ,
+        #              "strength": arg_troll.strength , "dexterity": arg_troll.dexterity , "magic": arg_troll.magic ,
         #              "intelligence": arg_troll.intelligence , "life:": arg_troll.life , "armor": arg_troll.armor}
         string = json.dumps(arg_troll.__dict__)
         folder = game.MAIN_DATA + "bosses/" if data_type == TROLL_BOSS_DATA else game.MAIN_DATA + "npcs/" if data_type == TROLL_NPC_DATA else game.MAIN_DATA + "other/"

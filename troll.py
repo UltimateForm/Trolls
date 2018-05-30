@@ -15,10 +15,12 @@
 
 # print(len(newCollection), " over") #dont forget len(collection) to get lenght
 import dialog
-import random
 import sys
 import game
 import math
+import random
+import time
+import numpy
 
 TROLL_ROGUE = "troll:rogue"
 TROLL_WARRIOR = "troll:warrior"
@@ -31,8 +33,9 @@ class Troll:
     def __init__(self, name: str):
         self.name = str(name)
         self.level = 1
-        self.dexterly = 1
-        self.strenght = 1
+        self.dexterity = 1
+        self.critical_hit_chance = 0.0
+        self.strength = 1
         self.magic = 1
         self.intelligence = 1
         self.armor = 1
@@ -54,11 +57,11 @@ class Troll:
                     troll_class = TROLL_WARRIOR
             self.troll_class = troll_class
             if troll_class == TROLL_ROGUE:
-                self.dexterly *= 1.6
+                self.dexterity *= 1.6
             elif troll_class == TROLL_SORCERER:
                 self.magic *= 1.6
             elif troll_class == TROLL_WARRIOR:
-                self.strenght *= 1.6
+                self.strength *= 1.6
             else:
                 raise ValueError("Specified class does not exist!")
         else:
@@ -92,31 +95,66 @@ class Troll:
 
     def apply_level(self):
         if self.troll_class == TROLL_WARRIOR:
-            Troll.process_stats(self, str_mult=1.5, mag_mult=0, dex_mult=1.25, intel_mult=0, life_mult=1.25)
+            Troll.apply_stats(self, str_mult=1.5, mag_mult=0, dex_mult=1.25, intel_mult=0, life_mult=1.25)
         elif self.troll_class == TROLL_SORCERER:
-            Troll.process_stats(self, str_mult=0, mag_mult=1.5, dex_mult=0, intel_mult=1.4, life_mult=1.1)
+            Troll.apply_stats(self, str_mult=0, mag_mult=1.5, dex_mult=0, intel_mult=1.4, life_mult=1.1)
         elif self.troll_class == TROLL_ROGUE:
-            Troll.process_stats(self, str_mult=1.3, mag_mult=0, dex_mult=1.4, intel_mult=1.1, life_mult=1.2)
+            Troll.apply_stats(self, str_mult=1.3, mag_mult=0, dex_mult=1.4, intel_mult=1.1, life_mult=1.2)
+        self.life = self.base_life
+        self.critical_hit_chance = numpy.clip(1-(self.strength/self.dexterity), 0, 1)
 
     @classmethod
-    def fight(cls, attacker, defender):
+    def fight(cls, attacker: "Troll", defender: "Troll"):
         victor = None
+        attacker.apply_level()
+        defender.apply_level()
         while attacker.life >= 0 and defender.life >= 0:
-            victor = Troll.clash(attacker,defender)
-        print("Victor is " + victor.name)
+            print("\n->Attacker's turn")
+            Troll.clash(attacker, defender)
+            print("\n->Defender's turn")
+            Troll.clash(defender, attacker)
+
+        print("\n\n")
+        print(
+            f"Attacker life : {attacker.life}/{attacker.base_life} "
+            f"| Defender life : {defender.life}/{defender.base_life}")
+        if attacker.life <= 0:
+            print("Victor is " + defender.name)
+        else:
+            print("Victor is " + attacker.name)
 
     @classmethod
-    def clash(cls, troll1, troll2):
-        damage = 0
-        damage
+    def clash(cls, attacker: "Troll", defender: "Troll"):
+        if attacker.troll_class == TROLL_WARRIOR or attacker.troll_class == TROLL_ROGUE:
+            free_weapon_dmg = 50
+            free_armor = 100
+            damage = attacker.strength*(free_weapon_dmg/free_armor)
+            damage *= 1+random.uniform(-0.25, 0.25)
+            damage = int(damage)
+            print(attacker.name + "attacks... ", end="", flush=True)
+            time.sleep(0.25)
+
+            hit_chance = 0.9*(attacker.dexterity/defender.dexterity)
+            hit_fail = random.random() > hit_chance
+            if hit_fail:
+                print("But " + defender.name + " dodged!!")
+            else:
+                critical_hit = random.random() < attacker.critical_hit_chance
+                if critical_hit:
+                    print("CRITICAL HIT!! ", end="", flush=True)
+                    damage *= 2
+                print(defender.name + " receives " + str(int(damage)) + " damage!")
+
+                defender.life -= damage
 
     @classmethod
-    def process_stats(cls, arg_troll, life_mult=1.25, mag_mult=1.1, dex_mult=1.1, str_mult=1.1, intel_mult=1.1):
-        arg_troll.strenght = math.pow(arg_troll.level, str_mult)
-        arg_troll.dexterly = math.pow(arg_troll.level, dex_mult)
+    def apply_stats(cls, arg_troll: "Troll", life_mult=1.25, mag_mult=1.1, dex_mult=1.1, str_mult=1.1, intel_mult=1.1):
+        arg_troll.strength = math.pow(arg_troll.level, str_mult)
+        arg_troll.dexterity = math.pow(arg_troll.level, dex_mult)
         arg_troll.magic = math.pow(arg_troll.level, mag_mult)
         arg_troll.intelligence = math.pow(arg_troll.level, intel_mult)
-        arg_troll.base_life = math.pow(arg_troll.level, life_mult) * 10
+        arg_troll.base_life = int(math.pow(arg_troll.level, life_mult) * 10)
+
 
     @classmethod
     def apply_npc_tier(cls, npc_troll):
@@ -124,7 +162,18 @@ class Troll:
 
 
 if __name__ == "__main__":
-
+    c_attacker = Troll("Bully")
+    c_defender = Troll("Youngster")
+    c_attacker.init_class(TROLL_WARRIOR)
+    c_defender.init_class(TROLL_ROGUE)
+    random_exp = random.randint(1, 10001)
+    c_attacker.add_exp(random_exp)
+    c_defender.add_exp(random_exp)
+    game.game.troll_info(c_attacker)
+    game.game.troll_info(c_defender)
+    input("Press enter to continue")
+    Troll.fight(c_attacker, c_defender)
+    exit()
     USR_NAME = str(input("Name your troll: "))
     USR_TROLL = Troll(USR_NAME)
     print(
