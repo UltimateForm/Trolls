@@ -22,25 +22,48 @@ import random
 import time
 import numpy
 
-TROLL_ROGUE = "troll:rogue"
-TROLL_WARRIOR = "troll:warrior"
+TROLL_ROGUE = "Rogue"
+TROLL_WARRIOR = "Warrior"
 TROLL_SORCERER = "troll:sorc"
+
+class Attributes:
+    def __init__(self, power_class : str, exp : int, strength : int, dexterity : int, magic : int, intelligence : int, total_life : int):
+        self._power_class = power_class
+        self.exp = exp
+        self.strength = strength
+        self.dexterity = dexterity
+        self.magic = magic
+
+
+    @property
+    def level(self):
+        return int(math.sqrt(self.exp))
+
+    @property
+    def total_life(self):
+        return
+
+    @property
+    def physical_critical_hit_chance(self):
+        return numpy.clip(1-(self.strength/self.dexterity), 0, 1)
+
 
 
 class Troll:
     """Handles trolls and stuffs"""
 
+
     def __init__(self, name: str):
         self.name = str(name)
         self.level = 1
-        self.dexterity = 1
-        self.critical_hit_chance = 0.0
-        self.strength = 1
-        self.magic = 1
-        self.intelligence = 1
-        self.armor = 1
-        self.base_life = 100
-        self.life = self.base_life
+        self.stats.dexterity = 1
+        self.stats.critical_hit_chance = 0.0
+        self.stats.strength = 1
+        self.stats.magic = 1
+        self.stats.intelligence = 1
+        self.stats.total_life = 100
+        self.mods.armor = 1
+        self.mods.life = self.stats
         self.troll_class = "none"
         self.exp = 0
 
@@ -116,8 +139,8 @@ class Troll:
 
         print("\n\n")
         print(
-            f"Attacker life : {attacker.life}/{attacker.base_life} "
-            f"| Defender life : {defender.life}/{defender.base_life}")
+            f"Attacker life : {attacker.life}/{attacker.total_life} "
+            f"| Defender life : {defender.life}/{defender.total_life}")
         if attacker.life <= 0:
             print("Victor is " + defender.name)
         else:
