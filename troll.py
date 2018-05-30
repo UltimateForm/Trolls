@@ -36,7 +36,8 @@ class Troll:
         self.magic = 1
         self.intelligence = 1
         self.armor = 1
-        self.life = 100
+        self.base_life = 100
+        self.life = self.base_life
         self.troll_class = "none"
         self.exp = 0
 
@@ -98,12 +99,24 @@ class Troll:
             Troll.process_stats(self, str_mult=1.3, mag_mult=0, dex_mult=1.4, intel_mult=1.1, life_mult=1.2)
 
     @classmethod
+    def fight(cls, attacker, defender):
+        victor = None
+        while attacker.life >= 0 and defender.life >= 0:
+            victor = Troll.clash(attacker,defender)
+        print("Victor is " + victor.name)
+
+    @classmethod
+    def clash(cls, troll1, troll2):
+        damage = 0
+        damage
+
+    @classmethod
     def process_stats(cls, arg_troll, life_mult=1.25, mag_mult=1.1, dex_mult=1.1, str_mult=1.1, intel_mult=1.1):
         arg_troll.strenght = math.pow(arg_troll.level, str_mult)
         arg_troll.dexterly = math.pow(arg_troll.level, dex_mult)
         arg_troll.magic = math.pow(arg_troll.level, mag_mult)
         arg_troll.intelligence = math.pow(arg_troll.level, intel_mult)
-        arg_troll.life = math.pow(arg_troll.level, life_mult) * 10
+        arg_troll.base_life = math.pow(arg_troll.level, life_mult) * 10
 
     @classmethod
     def apply_npc_tier(cls, npc_troll):
