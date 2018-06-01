@@ -1,7 +1,5 @@
-import json
 import game
-import npc
-import troll
+from data.scritps import troll, npc
 import random
 
 TIER_CITIZENS = 1
@@ -21,14 +19,14 @@ class instance:
     def process_dungeon(self):
         for i in range(self.num_trolls):
             rlevel = random.randint(self.tier*10, self.tier*10 +5)
-            mob = npc.npc("station_troll" + str(i),troll_class="random", tier=self.tier, level=rlevel)
+            mob = npc.npc("station_troll" + str(i), troll_class="random", tier=self.tier, level=rlevel)
             game.game.troll_info(mob.troll)
             self.mobs.append(npc)
-        troll.Troll.level_to(self.troll_boss.troll, self.tier*10 +8, )
+        troll.Troll.level_to(self.troll_boss.troll, self.tier * 10 + 8, )
         game.game.troll_info(self.troll_boss.troll)
 
 
-station_mine = instance(4 , 1 , npc.npc("BOSS!" , level=1 , tier=6 , troll_class=troll.TROLL_WARRIOR))
+station_mine = instance(4, 1, npc.npc("BOSS!", level=1, tier=6, troll_class=troll.TROLL_WARRIOR))
 # data = {"value1" : "data1", "value2":"data2"}
 # jsonstring = json.dumps(data)
 # with open("/home/subarashi/file.json", "w") as mfile:

@@ -1,10 +1,7 @@
 import dialog as dlg
-import random
 import bunch
 import json
-import platform
 import os
-import glob
 
 TROLL_NPC_DATA = 1
 TROLL_BOSS_DATA = 2
@@ -47,14 +44,14 @@ class game():
     def troll_info(cls, arg_troll: "troll.Troll"):
         dlg.separate()
         dlg.dialog(msg="Name: " + arg_troll.name)
-        dlg.dialog(msg="Level: " + str(arg_troll.level))
-        dlg.dialog(msg="Class: " + arg_troll.troll_class)
-        dlg.dialog(msg="Strength: {0}".format(str(round(arg_troll.strength, 1))))
-        dlg.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.dexterity, 1))))
-        dlg.dialog(msg="Critical hit chance: {0}%".format(str(round(arg_troll.critical_hit_chance*100, 1))))
-        dlg.dialog(msg="Magic: {0}".format(str(round(arg_troll.magic, 1))))
-        dlg.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.intelligence, 1))))
-        dlg.dialog(msg="Life: {0}".format(str(int(arg_troll.base_life))))
+        dlg.dialog(msg="Level: " + str(arg_troll.attributes.level))
+        dlg.dialog(msg="Class: " + arg_troll.attributes.form.name)
+        dlg.dialog(msg="Strength: {0}".format(str(round(arg_troll.total_strength, 1))))
+        dlg.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.total_dexterity, 1))))
+        dlg.dialog(msg="Critical hit chance (phys): {0}%".format(str(round(arg_troll.total_phys_crit_chance*100, 1))))
+        dlg.dialog(msg="Magic: {0}".format(str(round(arg_troll.total_magic, 1))))
+        dlg.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.total_intelligence, 1))))
+        dlg.dialog(msg="Vitality: {0}".format(str(int(arg_troll.attributes.vitality))))
         dlg.separate()
 
     @classmethod
