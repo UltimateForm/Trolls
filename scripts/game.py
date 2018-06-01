@@ -1,4 +1,4 @@
-import dialog as dlg
+from scripts import troll, dialog
 import bunch
 import json
 import os
@@ -29,7 +29,7 @@ class game():
     @classmethod
     def config(cls):
         if game.FIRST_RUN:
-            dlg.dialog(msg="FIRST RUN")
+            dialog.dialog(msg="FIRST RUN")
             with open(game.DATA_LOCATION, "w+") as datafile:
                 datafile.write("init=true")
             if not os.path.exists(game.MAIN_DATA):
@@ -42,17 +42,17 @@ class game():
 
     @classmethod
     def troll_info(cls, arg_troll: "troll.Troll"):
-        dlg.separate()
-        dlg.dialog(msg="Name: " + arg_troll.name)
-        dlg.dialog(msg="Level: " + str(arg_troll.attributes.level))
-        dlg.dialog(msg="Class: " + arg_troll.attributes.form.name)
-        dlg.dialog(msg="Strength: {0}".format(str(round(arg_troll.total_strength, 1))))
-        dlg.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.total_dexterity, 1))))
-        dlg.dialog(msg="Critical hit chance (phys): {0}%".format(str(round(arg_troll.total_phys_crit_chance*100, 1))))
-        dlg.dialog(msg="Magic: {0}".format(str(round(arg_troll.total_magic, 1))))
-        dlg.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.total_intelligence, 1))))
-        dlg.dialog(msg="Vitality: {0}".format(str(int(arg_troll.attributes.vitality))))
-        dlg.separate()
+        dialog.separate()
+        dialog.dialog(msg="Name: " + arg_troll.name)
+        dialog.dialog(msg="Level: " + str(arg_troll.attributes.level))
+        dialog.dialog(msg="Class: " + arg_troll.attributes.form.name)
+        dialog.dialog(msg="Strength: {0}".format(str(round(arg_troll.total_strength, 1))))
+        dialog.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.total_dexterity, 1))))
+        dialog.dialog(msg="Critical hit chance (phys): {0}%".format(str(round(arg_troll.total_phys_crit_chance*100, 1))))
+        dialog.dialog(msg="Magic: {0}".format(str(round(arg_troll.total_magic, 1))))
+        dialog.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.total_intelligence, 1))))
+        dialog.dialog(msg="Vitality: {0}".format(str(int(arg_troll.attributes.vitality))))
+        dialog.separate()
 
     @classmethod
     def serialize(cls, arg_troll, data_type):
@@ -81,7 +81,7 @@ class game():
             # game.troll_info(mtroll)
             return mtroll
         elif json_path.endswith(".json"):
-            dlg.dialog(msg=json_path + " : File not found!")
+            dialog.dialog(msg=json_path + " : File not found!")
         else:
             json_path += ".json"
             return game.deserialize(json_path)

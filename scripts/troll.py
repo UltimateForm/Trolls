@@ -14,9 +14,8 @@
 
 
 # print(len(newCollection), " over") #dont forget len(collection) to get lenght
-import dialog
 import sys
-import game
+from scripts import *
 import math
 import random
 import time

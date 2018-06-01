@@ -1,5 +1,4 @@
-from scritps import troll
-import game
+from scripts import game, troll
 
 TIER_CIVILIAN = 1
 TIER_INITIATE = 2
@@ -8,6 +7,8 @@ TIER_RAIDER = 4
 TIER_CHIEF = 5
 TIER_WARLORD = 6
 TIER_ALPHA = 7
+
+
 class npc:
     def __init__(self, name, **kwargs):
         troll_class = kwargs.get("troll_class")
@@ -26,14 +27,12 @@ class npc:
                                          dex_mult=dexterly_mult if dexterly_mult is not None else 1,
                                          mag_mult=magic_mult if magic_mult is not None else 1)
 
+
 if __name__ == "__main__":
     my_npc = npc("MY_WARRIOR_TROLL", troll_class=troll.TROLL_WARRIOR, level=10)
     game.game.troll_info(my_npc.troll)
-    my_npc = npc ("MY_ROGUE_TROLL", troll_class=troll.TROLL_ROGUE, level=10)
-    game.game.troll_info (my_npc.troll)
-    my_npc = npc ("MY_SORCERER_TROLL", troll_class=troll.TROLL_SORCERER, level=10)
-    game.game.troll_info (my_npc.troll)
+    my_npc = npc("MY_ROGUE_TROLL", troll_class=troll.TROLL_ROGUE, level=10)
+    game.game.troll_info(my_npc.troll)
+    my_npc = npc("MY_SORCERER_TROLL", troll_class=troll.TROLL_SORCERER, level=10)
+    game.game.troll_info(my_npc.troll)
     game.game.serialize(my_npc.troll, game.TROLL_OTHER_DATA)
-
-
-
