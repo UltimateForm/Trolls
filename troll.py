@@ -24,28 +24,69 @@ import numpy
 
 TROLL_ROGUE = "Rogue"
 TROLL_WARRIOR = "Warrior"
-TROLL_SORCERER = "troll:sorc"
+TROLL_SORCERER = "Sorcerer"
+
+
+class ClassFormula:
+    def __init__(self, str_mult : float, dex_mult : float, magic_mult : float, intel_mult : float, life_mult : float):
+        self.str_mult = str_mult
+        self.dex_mult = dex_mult
+        self.magic_mult = magic_mult
+        self.intel_mult = intel_mult
+        self.life_mult = life_mult
+
+
+WARRIOR_FORM = ClassFormula(str_mult=1.5, dex_mult=1.25, magic_mult=0, intel_mult=0,life_mult=1.25)
+SORCERER_FORM = ClassFormula(str_mult=0, dex_mult=0, magic_mult=1.5, intel_mult=1.4, life_mult=1.1)
+ROGUE_FORM = ClassFormula(str_mult=1.3, dex_mult=1.4, magic_mult=0, intel_mult=1.1, life_mult=1.2)
+
 
 class Attributes:
-    def __init__(self, power_class : str, exp : int, strength : int, dexterity : int, magic : int, intelligence : int, total_life : int):
-        self._power_class = power_class
-        self.exp = exp
-        self.strength = strength
-        self.dexterity = dexterity
-        self.magic = magic
-
+    def __init__(self, troll_class: str, exp: int):
+        self._troll_class = troll_class
+        self._exp = exp
 
     @property
     def level(self):
         return int(math.sqrt(self.exp))
 
     @property
+    def form(self):
+        if self._troll_class == TROLL_WARRIOR:
+            return WARRIOR_FORM
+        elif self._troll_class == TROLL_ROGUE:
+            return ROGUE_FORM
+        elif self._troll_class == TROLL_SORCERER:
+            return SORCERER_FORM
+
+    @property
     def total_life(self):
-        return
+        return int(math.pow(self.level, self.form.life_mult) * 10)
 
     @property
     def physical_critical_hit_chance(self):
         return numpy.clip(1-(self.strength/self.dexterity), 0, 1)
+
+    @property
+    def strength(self):
+        return math.pow(self.level, self.form.str_mult)
+
+    @property
+    def dexterity(self):
+        return math.pow(self.level, self)
+
+    @property
+    def magic(self):
+        return math.pow(self.level, self.form.magic_mult)
+
+    @property
+    def intelligence(self):
+        return math.pow(self.level, self.form.intel_mult)
+
+    def add_exp(self, exp):
+        self._exp += exp
+
+    def change_class(self, new_class : str, ):
 
 
 
