@@ -1,5 +1,6 @@
 import game
-from data.scritps import troll, npc
+from scritps import npc
+from scritps import troll
 import random
 
 TIER_CITIZENS = 1

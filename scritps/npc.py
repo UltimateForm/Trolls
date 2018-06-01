@@ -1,4 +1,4 @@
-from data.scritps import troll
+from scritps import troll
 import game
 
 TIER_CIVILIAN = 1
