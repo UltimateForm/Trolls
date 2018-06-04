@@ -1,21 +1,5 @@
-# collection = ["yo", "collection", "lool", "Ok enough"]
-# print(collection)
-# print(collection.__len__() , len(collection), "lool" in collection) #this determines if "lool" is in collection position 2
-# for i in collection:
-#     print(i)
-
-# for h in range(len(collection)): #this is the true C#' for, the one above is more like foreach i believe
-#     print(collection[h])
-
-# newCollection = list(range(5)) #so this is the constructor??? (uhm so the range(5) returns a collection)
-# newCollection.insert(4,2) #pushes value into the determined index and rearranges order
-# for j in newCollection:
-#     print(j)
-
-
-# print(len(newCollection), " over") #dont forget len(collection) to get lenght
 import sys
-from scripts import *
+import game
 import math
 import random
 import time
@@ -225,8 +209,8 @@ if __name__ == "__main__":
     print("Will add {0} exp to each troll".format(str(random_exp)))
     c_attacker.add_exp(random_exp)
     c_defender.add_exp(random_exp)
-    game.game.troll_info(c_attacker)
-    game.game.troll_info(c_defender)
+    game.Game.troll_info(c_attacker)
+    game.Game.troll_info(c_defender)
     input("Press enter to continue")
     Troll.fight(c_attacker, c_defender)
     exit()
@@ -239,8 +223,8 @@ if __name__ == "__main__":
 
     testexp = float(input("Insert exp to add"))
     USR_TROLL.add_exp(testexp)
-    game.game.troll_info(USR_TROLL)
-    game.game.serialize(USR_TROLL, game.TROLL_OTHER_DATA)
+    game.Game.troll_info(USR_TROLL)
+    game.Game.serialize(USR_TROLL, game.TROLL_OTHER_DATA)
     print("test over")
 
 # while(true):

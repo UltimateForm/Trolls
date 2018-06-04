@@ -1,4 +1,4 @@
-from scripts import troll, dialog
+import troll, dialog, item
 import bunch
 import json
 import os
@@ -8,7 +8,7 @@ TROLL_BOSS_DATA = 2
 TROLL_OTHER_DATA = 0
 
 
-class game():
+class Game:
     bosses = []
     DATA_LOCATION = ""
     MAIN_DATA = ""
@@ -18,27 +18,27 @@ class game():
 
     @classmethod
     def start(cls):
-        game.DATA_LOCATION = os.path.abspath(__file__)[:-7] + "config.cfg"
-        game.MAIN_DATA = os.path.abspath(__file__)[:-7] + "data/"
-        game.PLAYER_DATA = game.MAIN_DATA + "player/"
-        game.BOSS_DATA = game.MAIN_DATA + "bosses/"
-        game.FIRST_RUN = not os.path.isfile(game.DATA_LOCATION)
-        game.config()
+        Game.DATA_LOCATION = os.path.abspath(__file__)[:-7] + "config.cfg"
+        Game.MAIN_DATA = os.path.abspath(__file__)[:-7] + "data/"
+        Game.PLAYER_DATA = Game.MAIN_DATA + "player/"
+        Game.BOSS_DATA = Game.MAIN_DATA + "bosses/"
+        Game.FIRST_RUN = not os.path.isfile(Game.DATA_LOCATION)
+        Game.config()
         print("\tWelcome to TROLL!")
 
     @classmethod
     def config(cls):
-        if game.FIRST_RUN:
+        if Game.FIRST_RUN:
             dialog.dialog(msg="FIRST RUN")
-            with open(game.DATA_LOCATION, "w+") as datafile:
+            with open(Game.DATA_LOCATION, "w+") as datafile:
                 datafile.write("init=true")
-            if not os.path.exists(game.MAIN_DATA):
-                os.mkdir(game.MAIN_DATA)
-                os.mkdir(game.MAIN_DATA + "bosses/")
-                os.mkdir(game.MAIN_DATA + "npcs/")
-                os.mkdir(game.MAIN_DATA + "other/")
-                os.mkdir(game.MAIN_DATA + "instance/")
-                os.mkdir(game.MAIN_DATA + "player/")
+            if not os.path.exists(Game.MAIN_DATA):
+                os.mkdir(Game.MAIN_DATA)
+                os.mkdir(Game.MAIN_DATA + "bosses/")
+                os.mkdir(Game.MAIN_DATA + "npcs/")
+                os.mkdir(Game.MAIN_DATA + "other/")
+                os.mkdir(Game.MAIN_DATA + "instance/")
+                os.mkdir(Game.MAIN_DATA + "player/")
 
     @classmethod
     def troll_info(cls, arg_troll: "troll.Troll"):
@@ -48,11 +48,31 @@ class game():
         dialog.dialog(msg="Class: " + arg_troll.attributes.form.name)
         dialog.dialog(msg="Strength: {0}".format(str(round(arg_troll.total_strength, 1))))
         dialog.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.total_dexterity, 1))))
-        dialog.dialog(msg="Critical hit chance (phys): {0}%".format(str(round(arg_troll.total_phys_crit_chance*100, 1))))
+        dialog.dialog(
+            msg="Critical hit chance (phys): {0}%".format(str(round(arg_troll.total_phys_crit_chance * 100, 1))))
         dialog.dialog(msg="Magic: {0}".format(str(round(arg_troll.total_magic, 1))))
         dialog.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.total_intelligence, 1))))
         dialog.dialog(msg="Vitality: {0}".format(str(int(arg_troll.attributes.vitality))))
         dialog.separate()
+
+    @classmethod
+    def weapon_info(cls, arg_item: "item.Weapon"):
+        dialog.separate()
+        dialog.dialog(msg=f"Type: {arg_item.type.name}\n"
+                          f"Name: {arg_item.name}\n"
+                          f"Damage: {arg_item.damage} {arg_item.damage_type.name}\n"
+                          f"\tMods:\n"
+                          f"\t\tStrength: {str(arg_item.mods.str_bonus)}\n"
+                          f"\t\tDexterity: {str(arg_item.mods.dex_bonus)}\n"
+                          f"\t\tMagic: {str(arg_item.mods.mag_bonus)}\n"
+                          f"\t\tIntelligence: {str(arg_item.mods.int_bonus)}\n"
+                          f"\t\tCrit. Chance: {str(arg_item.mods.crit_bonus)}\n"
+                          f"\t\tLife: {str(arg_item.mods.life_bonus)}\n"
+                          f"Level: {arg_item.level}")
+
+    @classmethod
+    def gear_info(cls, arg_item : "item.Gear"):
+        pass
 
     @classmethod
     def serialize(cls, arg_troll, data_type):
@@ -66,7 +86,7 @@ class game():
         #              "strength": arg_troll.strength , "dexterity": arg_troll.dexterity , "magic": arg_troll.magic ,
         #              "intelligence": arg_troll.intelligence , "life:": arg_troll.life , "armor": arg_troll.armor}
         string = json.dumps(arg_troll.__dict__)
-        folder = game.MAIN_DATA + "bosses/" if data_type == TROLL_BOSS_DATA else game.MAIN_DATA + "npcs/" if data_type == TROLL_NPC_DATA else game.MAIN_DATA + "other/"
+        folder = Game.MAIN_DATA + "bosses/" if data_type == TROLL_BOSS_DATA else Game.MAIN_DATA + "npcs/" if data_type == TROLL_NPC_DATA else Game.MAIN_DATA + "other/"
         with open(folder + "{}.json".format(arg_troll.name), "w+") as my_file:
             my_file.write(string + "\n")
 
@@ -78,19 +98,19 @@ class game():
             troll_dict = json.loads(open(json_path).read())
             mtroll = bunch.bunchify(troll_dict)
             # dlg.dialog(msg=troll_dict.get("name") + str(troll_dict.get("life:")))
-            # game.troll_info(mtroll)
+            # Game.troll_info(mtroll)
             return mtroll
         elif json_path.endswith(".json"):
             dialog.dialog(msg=json_path + " : File not found!")
         else:
             json_path += ".json"
-            return game.deserialize(json_path)
+            return Game.deserialize(json_path)
 
     @classmethod
     def get_boss(cls, file_name):
-        return game.deserialize(game.BOSS_DATA + file_name)
+        return Game.deserialize(Game.BOSS_DATA + file_name)
 
 
-game.start()
+Game.start()
 if __name__ == "__main__":
-    game.troll_info(game.get_boss("Bartok"))
+    Game.troll_info(Game.get_boss("Bartok"))

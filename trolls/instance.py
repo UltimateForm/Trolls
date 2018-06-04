@@ -1,4 +1,4 @@
-from scripts import *
+import game, troll, npc
 import random
 
 TIER_CITIZENS = 1
