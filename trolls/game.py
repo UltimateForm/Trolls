@@ -1,6 +1,6 @@
-import troll, dialog, item
+import troll, dialog, item, damage
 import bunch
-import json
+import jsonpickle
 import os
 
 TROLL_NPC_DATA = 1
@@ -18,8 +18,8 @@ class Game:
 
     @classmethod
     def start(cls):
-        Game.DATA_LOCATION = os.path.abspath(__file__)[:-7] + "config.cfg"
-        Game.MAIN_DATA = os.path.abspath(__file__)[:-7] + "data/"
+        Game.DATA_LOCATION = os.path.abspath(__file__)[:-8] + "config.cfg"
+        Game.MAIN_DATA = os.path.abspath(__file__)[:-8] + "data/"
         Game.PLAYER_DATA = Game.MAIN_DATA + "player/"
         Game.BOSS_DATA = Game.MAIN_DATA + "bosses/"
         Game.FIRST_RUN = not os.path.isfile(Game.DATA_LOCATION)
@@ -60,7 +60,7 @@ class Game:
         dialog.separate()
         dialog.dialog(msg=f"Type: {arg_item.type.name}\n"
                           f"Name: {arg_item.name}\n"
-                          f"Damage: {arg_item.damage} {arg_item.damage_type.name}\n"
+                          f"Damage: {arg_item.damage} {damage.Damage.get_name(arg_item.damage_type)}\n"
                           f"\tMods:\n"
                           f"\t\tStrength: {str(arg_item.mods.str_bonus)}\n"
                           f"\t\tDexterity: {str(arg_item.mods.dex_bonus)}\n"
@@ -85,7 +85,7 @@ class Game:
         # trol_dict = {"name": arg_troll.name , "class": arg_troll.troll_class , "level": arg_troll.level ,
         #              "strength": arg_troll.strength , "dexterity": arg_troll.dexterity , "magic": arg_troll.magic ,
         #              "intelligence": arg_troll.intelligence , "life:": arg_troll.life , "armor": arg_troll.armor}
-        string = json.dumps(arg_troll.__dict__)
+        string = jsonpickle.encode(arg_troll)
         folder = Game.MAIN_DATA + "bosses/" if data_type == TROLL_BOSS_DATA else Game.MAIN_DATA + "npcs/" if data_type == TROLL_NPC_DATA else Game.MAIN_DATA + "other/"
         with open(folder + "{}.json".format(arg_troll.name), "w+") as my_file:
             my_file.write(string + "\n")
@@ -95,8 +95,7 @@ class Game:
         # with open(path, encoding="utf-8") as json_file:
         #     print(json_file)
         if os.path.isfile(json_path):
-            troll_dict = json.loads(open(json_path).read())
-            mtroll = bunch.bunchify(troll_dict)
+            mtroll = jsonpickle.decode(open(json_path).read())
             # dlg.dialog(msg=troll_dict.get("name") + str(troll_dict.get("life:")))
             # Game.troll_info(mtroll)
             return mtroll
@@ -112,5 +111,3 @@ class Game:
 
 
 Game.start()
-if __name__ == "__main__":
-    Game.troll_info(Game.get_boss("Bartok"))

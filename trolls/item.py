@@ -34,7 +34,7 @@ class ItemBase:
 
 class Weapon(ItemBase):
     def __init__(self, name: str, level: int, mods: "troll.Mods", type: "WeaponTypes", damage: int,
-                 damage_type: "damage.DamageTypes"):
+                 damage_type: "damage.Damage"):
         super().__init__(name, level, mods)
         self.damage = damage
         self.type = type
@@ -52,9 +52,10 @@ class Gear(ItemBase):
 
 
 if __name__ == "__main__":
-    weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), WeaponTypes.SWORD, 65, damage.DamageTypes.PHYSICAL)
+    weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), WeaponTypes.SWORD, 65, damage.Damage.PHYSICAL)
     game.Game.weapon_info(weap)
 
     weap2 = Weapon("Fiery Rod", 10, troll.Mods(0, 0, 5, 1, 10, 0.5), WeaponTypes.STAFF, 120,
-                   damage.DamageTypes.MAGIC | damage.DamageTypes.FIRE | damage.DamageTypes.PROJECTILE)
+                   damage.Damage.MAGIC | damage.Damage.COLD | damage.Damage.PROJECTILE)
     game.Game.weapon_info(weap2)
+    game.Game.serialize(weap2, game.TROLL_OTHER_DATA)
