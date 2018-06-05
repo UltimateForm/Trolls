@@ -1,11 +1,11 @@
 import troll, dialog, item, damage
-import bunch
 import jsonpickle
 import os
 
 TROLL_NPC_DATA = 1
 TROLL_BOSS_DATA = 2
 TROLL_OTHER_DATA = 0
+TROLL_ITEMS_DATA = 3
 
 
 class Game:
@@ -22,6 +22,7 @@ class Game:
         Game.MAIN_DATA = os.path.abspath(__file__)[:-8] + "data/"
         Game.PLAYER_DATA = Game.MAIN_DATA + "player/"
         Game.BOSS_DATA = Game.MAIN_DATA + "bosses/"
+        Game.ITEMS_DATA = Game.MAIN_DATA + "item/"
         Game.FIRST_RUN = not os.path.isfile(Game.DATA_LOCATION)
         Game.config()
         print("\tWelcome to TROLL!")

@@ -52,10 +52,12 @@ class Gear(ItemBase):
 
 
 if __name__ == "__main__":
-    weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), WeaponTypes.SWORD, 65, damage.Damage.PHYSICAL)
+    print(WeaponTypes(64))
+    pass
+    weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), WeaponTypes.SWORD, 6515, damage.Damage.PHYSICAL)
     game.Game.weapon_info(weap)
 
-    weap2 = Weapon("Fiery Rod", 10, troll.Mods(0, 0, 5, 1, 10, 0.5), WeaponTypes.STAFF, 120,
+    weap2 = Weapon("Fiery Rod", 10, troll.Mods(0, 0, 5, 1, 10, 0.5), WeaponTypes.STAFF, 1231231,
                    damage.Damage.MAGIC | damage.Damage.COLD | damage.Damage.PROJECTILE)
     game.Game.weapon_info(weap2)
     game.Game.serialize(weap2, game.TROLL_OTHER_DATA)

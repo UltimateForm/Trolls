@@ -174,8 +174,8 @@ class Troll:
     @classmethod
     def clash(cls, attacker: "Troll", defender: "Troll"):
         if attacker.troll_class == WARRIOR_FORM or attacker.troll_class == ROGUE_FORM:
-            free_weapon_dmg = 50
-            free_armor = 100
+            free_weapon_dmg = 500
+            free_armor = 1000
             damage = attacker.total_strength * (free_weapon_dmg / free_armor)
             damage *= 1 + random.uniform(-0.25, 0.25)
             damage = int(damage)
@@ -205,7 +205,8 @@ if __name__ == "__main__":
     c_defender = Troll("Youngster")
     c_attacker.init_class(WARRIOR_FORM)
     c_defender.init_class(ROGUE_FORM)
-    random_exp = random.randint(1, 10001)
+    #random_exp = random.randint(1, 10001)
+    random_exp = 10000
     print("Will add {0} exp to each troll".format(str(random_exp)))
     c_attacker.add_exp(random_exp)
     c_defender.add_exp(random_exp)
