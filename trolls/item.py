@@ -1,9 +1,12 @@
-from enum import Enum
+from enum import IntFlag
 import game, troll, damage
 
 
-class WeaponTypes(Enum):
-    FISTS = 0
+WEAPON_FLAG = 128
+GEAR_FLAG = 65536
+
+
+class ItemTypes(IntFlag):
     SWORD = 1
     MAUL = 2
     AXE = 4
@@ -12,28 +15,42 @@ class WeaponTypes(Enum):
     STAFF = 32
     TOME = 64
     MAGIC_ORB = 128
+    WEAPON = SWORD | MAUL | AXE | DAGGER | BOW | STAFF | TOME | MAGIC_ORB
+    CHEST_ARMOR = 256
+    SHIELD = 512
+    WEAPON = 1024
+    HELMET = 2048
+    BOOTS = 4096
+    GLOVES = 8192
+    RING = 16384
+    AMULET = 32768
+    BELT = 65536
+    ARMOR = CHEST_ARMOR | SHIELD | HELMET | BOOTS | GLOVES | RING | AMULET | BELT
+    EQUIPABLE = WEAPON | ARMOR
+    BASIC_ITEM = 131072
 
+    @classmethod
+    def is_weapon(cls, weapon: "ItemTypes"):
+        return bool(cls.WEAPON & weapon)
 
-class ItemTypes(Enum):
-    CHEST_ARMOR = 0
-    WEAPON = 1
-    HELMET = 2
-    BOOTS = 4
-    GLOVES = 8
-    RING = 16
-    AMULET = 32
-    BELT = 64
+    @classmethod
+    def is_armor(cls, gear: "ItemTypes"):
+        return bool(cls.ARMOR & gear)
+
+    @classmethod
+    def is_equipeable(cls, item: "ItemTypes"):
+        return bool(cls.EQUIPABLE & item)
 
 
 class ItemBase:
-    def __init__(self, name: str, level: int, mods: "troll.Mods"):
-        self.level = level
-        self.mods = mods
+    def __init__(self, name: str, type: "ItemTypes", level: int, mods: "troll.Mods"):
         self.name = name
+        self.type = type
+        self.mods = mods
 
 
 class Weapon(ItemBase):
-    def __init__(self, name: str, level: int, mods: "troll.Mods", type: "WeaponTypes", damage: int,
+    def __init__(self, name: str, level: int, mods: "troll.Mods", type: "ItemTypes", damage: int,
                  damage_type: "damage.Damage"):
         super().__init__(name, level, mods)
         self.damage = damage
@@ -52,12 +69,12 @@ class Gear(ItemBase):
 
 
 if __name__ == "__main__":
-    print(WeaponTypes(64))
+    print(ItemTypes(64))
     pass
-    weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), WeaponTypes.SWORD, 6515, damage.Damage.PHYSICAL)
+    weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), ItemTypes.SWORD, 6515, damage.Damage.PHYSICAL)
     game.Game.weapon_info(weap)
 
-    weap2 = Weapon("Fiery Rod", 10, troll.Mods(0, 0, 5, 1, 10, 0.5), WeaponTypes.STAFF, 1231231,
+    weap2 = Weapon("Fiery Rod", 10, troll.Mods(0, 0, 5, 1, 10, 0.5), ItemTypes.STAFF, 1231231,
                    damage.Damage.MAGIC | damage.Damage.COLD | damage.Damage.PROJECTILE)
     game.Game.weapon_info(weap2)
     game.Game.serialize(weap2, game.TROLL_OTHER_DATA)
