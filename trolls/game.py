@@ -59,7 +59,7 @@ class Game:
     @classmethod
     def weapon_info(cls, arg_item: "item.Weapon"):
         dialog.separate()
-        dialog.dialog(msg=f"Type: {arg_item.type.name}\n"
+        dialog.dialog(msg=f"Type: {arg_item.item_type.name}\n"
                           f"Name: {arg_item.name}\n"
                           f"Damage: {arg_item.damage} {damage.Damage.get_name(arg_item.damage_type)}\n"
                           f"\tMods:\n"
