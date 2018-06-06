@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8e498c01-c4fc-4067-83f6-b0d862944fc7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/trolls/damage.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/damage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsconfig.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items.db" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items.db" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="item.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/item.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="731">
+              <caret line="43" column="18" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="damage.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/trolls/damage.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.cfg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/config.cfg">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="dialog.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/dialog.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="npc.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/npc.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="troll.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/troll.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-765">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/game.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="783">
+              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="encoder.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/encoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3043">
+              <caret line="179" selection-start-line="179" selection-end-line="179" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>int</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/game.py" />
+        <option value="$PROJECT_DIR$/troll.py" />
+        <option value="$PROJECT_DIR$/data/item.py" />
+        <option value="$PROJECT_DIR$/data/__init__.py" />
+        <option value="$PROJECT_DIR$/scripts/dialog.py" />
+        <option value="$PROJECT_DIR$/scripts/station.py" />
+        <option value="$PROJECT_DIR$/scripts/damage.py" />
+        <option value="$PROJECT_DIR$/scripts/game.py" />
+        <option value="$PROJECT_DIR$/scripts/instance.py" />
+        <option value="$PROJECT_DIR$/scripts/npc.py" />
+        <option value="$PROJECT_DIR$/scripts/troll.py" />
+        <option value="$PROJECT_DIR$/scripts/__init__.py" />
+        <option value="$PROJECT_DIR$/scripts/item.py" />
+        <option value="$PROJECT_DIR$/trolls/__init__.py" />
+        <option value="$PROJECT_DIR$/trolls/instance.py" />
+        <option value="$PROJECT_DIR$/trolls/npc.py" />
+        <option value="$PROJECT_DIR$/trolls/troll.py" />
+        <option value="$PROJECT_DIR$/trolls/test.py" />
+        <option value="$PROJECT_DIR$/trolls/game.py" />
+        <option value="$PROJECT_DIR$/trolls/item.py" />
+        <option value="$PROJECT_DIR$/trolls/damage.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1907" />
+    <option name="y" value="106" />
+    <option name="width" value="1294" />
+    <option name="height" value="990" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+              <item name="trolls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+              <item name="trollsdata" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+              <item name="trollsdata" type="462c0819:PsiDirectoryNode" />
+              <item name="items" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aromnelio\Documents\_helio.personal\Trolls\trollsdata" />
+      <recent name="C:\Users\aromnelio\Documents\_helio.personal\Trolls" />
+      <recent name="C:\Users\aromnelio\Documents\_helio.personal\Trolls\data" />
+      <recent name="C:\Users\aromnelio\Documents\_helio.personal\Trolls\data\scritps" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.item (1)">
+    <configuration name="damage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Trolls" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trolls" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trolls/damage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Trolls" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trolls" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trolls/game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="item (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Trolls" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trolls" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trolls/item.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Trolls" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trolls" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trolls/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="troll (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Trolls" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/troll.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.troll (1)" />
+      <item itemvalue="Python.item (1)" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.damage" />
+      <item itemvalue="Python.game" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.item (1)" />
+        <item itemvalue="Python.damage" />
+        <item itemvalue="Python.game" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.troll (1)" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e498c01-c4fc-4067-83f6-b0d862944fc7" name="Default" comment="" />
+      <created>1527592029109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1527592029109</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Stats + leveling tweaks">
+      <created>1527598613910</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527598613910</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Attributes class finished, + mods and buffs implemented">
+      <created>1527868365771</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527868365771</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Started working on items, fixed import issues">
+      <created>1528124986320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1528124986320</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Better serialization, install jsonpickle">
+      <created>1528131468089</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1528131468089</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1296" height="1000" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2703125" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.14350283" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Stats + leveling tweaks" />
+    <MESSAGE value="Attributes class finished, + mods and buffs implemented" />
+    <MESSAGE value="Started working on items, fixed import issues" />
+    <MESSAGE value="Better serialization, install jsonpickle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Better serialization, install jsonpickle" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/scripts/dialog.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/station.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/npc.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/troll.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/config.cfg" />
+    <entry file="file://$PROJECT_DIR$/scritps/instance.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/npc.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/game.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/config.cfg" />
+    <entry file="file://$PROJECT_DIR$/scritps/instance.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/npc.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/game.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/config.cfg" />
+    <entry file="file://$PROJECT_DIR$/scritps/instance.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/config.cfg" />
+    <entry file="file://$PROJECT_DIR$/scritps/instance.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/npc.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/game.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/item.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/config.cfg" />
+    <entry file="file://$PROJECT_DIR$/scripts/damage.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/game.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/instance.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/dialog.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/station.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/npc.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/troll.py" />
+    <entry file="file://$PROJECT_DIR$/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/scripts/item.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/scipy/fftpack/tests/test_basic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="62" selection-start-line="17" selection-start-column="62" selection-end-line="17" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/station.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/instance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/json/encoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3043">
+          <caret line="179" selection-start-line="179" selection-end-line="179" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/other/Simple sword.json" />
+    <entry file="file://$PROJECT_DIR$/trolls/dialog.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/config.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/npc.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/other/Fiery Rod.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsconfig.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="783">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/troll.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-765">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/damage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="34" lean-forward="true" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

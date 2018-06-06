@@ -5,22 +5,25 @@ class Damage(IntFlag):
     PHYSICAL = 1
     PROJECTILE = 2
     MAGIC = 4
-    ELEMENTAL = 8
-    FIRE = 16
-    COLD = 32
-    ELECTRIC = 64
-    ARCANE = 128
+    FIRE = 8
+    COLD = 16
+    ELECTRIC = 32
+    ELEMENTAL = FIRE | COLD | ELECTRIC
+    MENTAL = 64
+    FORCE = 128
     AOE = 256
 
     @classmethod
     def get_name(cls, dmg_type: "Damage"):
         name = ""
+        if dmg_type & Damage.MENTAL:
+            name += Damage.MENTAL.name + " "
         if dmg_type & Damage.AOE:
             name += Damage.AOE.name + " "
         if dmg_type & Damage.MAGIC:
             name += Damage.MAGIC.name + " "
-        if dmg_type & Damage.ARCANE:
-            name += Damage.ARCANE.name + " "
+        if dmg_type & Damage.FORCE:
+            name += Damage.FORCE.name + " "
         if dmg_type & Damage.ELEMENTAL:
             name += Damage.ELEMENTAL.name + " "
         if dmg_type & Damage.ELECTRIC:

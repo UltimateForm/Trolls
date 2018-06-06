@@ -40,6 +40,7 @@ class Game:
                 os.mkdir(Game.MAIN_DATA + "other/")
                 os.mkdir(Game.MAIN_DATA + "instance/")
                 os.mkdir(Game.MAIN_DATA + "player/")
+                os.mkdir(Game.MAIN_DATA + "items/")
 
     @classmethod
     def troll_info(cls, arg_troll: "troll.Troll"):
@@ -87,7 +88,9 @@ class Game:
         #              "strength": arg_troll.strength , "dexterity": arg_troll.dexterity , "magic": arg_troll.magic ,
         #              "intelligence": arg_troll.intelligence , "life:": arg_troll.life , "armor": arg_troll.armor}
         string = jsonpickle.encode(arg_troll)
-        folder = Game.MAIN_DATA + "bosses/" if data_type == TROLL_BOSS_DATA else Game.MAIN_DATA + "npcs/" if data_type == TROLL_NPC_DATA else Game.MAIN_DATA + "other/"
+        folder = Game.MAIN_DATA + "bosses/" if data_type == TROLL_BOSS_DATA else Game.MAIN_DATA + "npcs/" \
+            if data_type == TROLL_NPC_DATA else Game.MAIN_DATA + "items/" if data_type == TROLL_ITEMS_DATA \
+            else Game.MAIN_DATA + "other/"
         with open(folder + "{}.json".format(arg_troll.name), "w+") as my_file:
             my_file.write(string + "\n")
 
