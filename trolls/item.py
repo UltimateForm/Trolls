@@ -1,6 +1,6 @@
 from enum import IntFlag
-import game, troll, damage
 import math
+import game
 
 
 class ItemTypes(IntFlag):

@@ -1,9 +1,10 @@
 import sys
-import game
 import math
 import random
 import time
 import numpy
+import game
+
 
 TROLL_ROGUE = "Rogue"
 TROLL_WARRIOR = "Warrior"
@@ -79,7 +80,7 @@ class Attributes:
 
 
 class Mods:
-    def __init__(self, str_bonus: int, dex_bonus: int, mag_bonus: int, int_bonus: int, life_bonus: int,
+    def __init__(self, str_bonus: int, dex_bonus: int, mag_bonus: int, int_bonus: int, life_bonus: float,
                  crit_bonus: float):
         self.str_bonus = str_bonus
         self.dex_bonus = dex_bonus
