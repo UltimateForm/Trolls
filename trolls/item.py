@@ -1,5 +1,6 @@
 from enum import IntFlag
 import game, troll, damage
+import math
 
 
 class ItemTypes(IntFlag):
@@ -68,6 +69,10 @@ class Weapon(Item):
                          primary_damage_type=primary_damage_type, secondary_damage_type=secondary_damage_type,
                          tertiary_damage_type=tertiary_damage_type, weight=weight)
 
+    @classmethod
+    def average_damage_for_level(cls, level: int):
+        return math.pow(level, math.log(500, 100))
+
 
 class Armor(Item):
     def __init__(self, name: str, level: int, mods: "troll.Mods", a_type: "ItemTypes", armor: int, fire_resis: float,
@@ -78,9 +83,14 @@ class Armor(Item):
         super().__init__(name, a_type, level, mods, block_chance=block_chance, armor=armor, fire_resistance=fire_resis,
                          cold_resistance=cold_resis, electric_resistance=electic_resis,weight=weight)
 
+    @classmethod
+    def average_armor_for_level(cls, level: int):
+        return math.pow(level, math.log(1000, 100))
+
 
 if __name__ == "__main__":
     print(ItemTypes.WEAPON.value)
+    print(Weapon.average_damage_for_level(100))
     exit()
     weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), ItemTypes.AXE, 6515, damage.Damage.PHYSICAL)
     game.Game.weapon_info(weap)
