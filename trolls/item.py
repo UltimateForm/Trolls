@@ -1,6 +1,8 @@
 from enum import IntFlag
 import math
 import game
+import troll
+import damage
 
 
 class ItemTypes(IntFlag):
@@ -56,6 +58,9 @@ class Item:
         self.cold_resistance = kwargs.get("cold_resistance")
         self.electric_resistance = kwargs.get("electric_resistance")
         self.weight = kwargs.get("weight")
+
+        self.amount = 1
+        self.id = 0
 
 
 class Weapon(Item):

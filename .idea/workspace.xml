@@ -2,15 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e498c01-c4fc-4067-83f6-b0d862944fc7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/trolls/dbinterface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/dbinterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/dbinterface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trolls/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/item.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/troll.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/troll.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trollsconfig.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items.db" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Fiery Rod.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Assassin Initiate Dagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Assassin Initiate Garb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Dirty Rags.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Imaginary Orb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Imaginary Robes.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Invisible Staff of Never-Ending Might.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Old Copper Sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Ravager Initiate Hide Armor.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Ravager Initiate Sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Rusty Iron Sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Shank.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Slightly Magic Paper.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Stolen Human Kitchen Knife.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Stolen Human Sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Stone Dagger.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Tree Branch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trollsdata/items/Tree Splinter.json" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,8 +36,8 @@
       <file leaf-file-name="item.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/item.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="621">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
@@ -36,37 +48,17 @@
       <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
+            <state relative-caret-position="-170">
               <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stone Dagger.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Stone Dagger.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Stolen Human Sword.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Stolen Human Sword.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Stolen Human Kitchen Knife.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Stolen Human Kitchen Knife.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="Dirty Rags.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Dirty Rags.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="dbinterface.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="dbinterface.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
+            <state relative-caret-position="303">
+              <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -77,20 +69,6 @@
       <file leaf-file-name="station.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/station.py">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="npc.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/npc.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="troll.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/troll.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -134,13 +112,13 @@
         <option value="$PROJECT_DIR$/trolls/__init__.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/troll.py" />
-        <option value="$PROJECT_DIR$/trolls/item.py" />
         <option value="$PROJECT_DIR$/trolls/game.py" />
+        <option value="$PROJECT_DIR$/trolls/item.py" />
         <option value="$PROJECT_DIR$/trolls/dbinterface.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="251" />
     <option name="y" value="170" />
     <option name="width" value="1294" />
@@ -167,12 +145,6 @@
               <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
               <item name="Trolls" type="462c0819:PsiDirectoryNode" />
               <item name="trollsdata" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
-              <item name="trollsdata" type="462c0819:PsiDirectoryNode" />
-              <item name="items" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -305,9 +277,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.game" />
+        <item itemvalue="Python.item (1)" />
         <item itemvalue="Python.troll" />
         <item itemvalue="Python.dbinterface" />
-        <item itemvalue="Python.item (1)" />
         <item itemvalue="Python.damage" />
       </list>
     </recent_temporary>
@@ -393,11 +365,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scritps/npc.py" />
-    <entry file="file://$PROJECT_DIR$/scritps/game.py" />
-    <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
-    <entry file="file://$PROJECT_DIR$/scritps/config.cfg" />
-    <entry file="file://$PROJECT_DIR$/scritps/instance.py" />
     <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
     <entry file="file://$PROJECT_DIR$/scritps/config.cfg" />
     <entry file="file://$PROJECT_DIR$/scritps/instance.py" />
@@ -478,12 +445,6 @@
     <entry file="file://$PROJECT_DIR$/trolls/dialog.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/station.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/npc.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trolls/troll.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -491,44 +452,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/item.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Stone Dagger.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/trollsdata/items/Stolen Human Sword.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/trollsdata/items/Stolen Human Kitchen Knife.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Dirty Rags.json">
+    <entry file="file://$PROJECT_DIR$/trolls/npc.py">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Dirty Rags.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/station.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Assassin Initiate Garb.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Rusty Iron Sword.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Tree Splinter.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Stone Dagger.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Slightly Magic Paper.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trollsdata/items/Assassin Initiate Dagger.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="36" column="84" selection-start-line="36" selection-start-column="84" selection-end-line="36" selection-end-column="84" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
