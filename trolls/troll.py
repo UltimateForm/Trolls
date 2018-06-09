@@ -4,6 +4,7 @@ import random
 import time
 import numpy
 import game
+import inventory
 
 
 TROLL_ROGUE = "Rogue"
@@ -101,6 +102,7 @@ class Troll:
         self.modifiers = Mods(0, 0, 0, 0, 0, 0)
         self.buffs = Mods(0, 0, 0, 0, 0, 0)
         self.armor = 0
+        self.bag = inventory.Inventory(self)
 
     def init_class(self, troll_class: "ClassFormula"):
         """Initiates Troll class, modifying atributes"""
@@ -130,6 +132,14 @@ class Troll:
     @property
     def life(self):
         return self.attributes.vitality + self.modifiers.life_bonus + self.buffs.life_bonus
+
+    @property
+    def weapon(self):
+        return self.bag.equipped_weapon
+
+    @property
+    def armor(self):
+        return self.bag.equipped_armor
 
     @classmethod
     def create_classed_troll(cls, troll_class: "ClassFormula", troll_name: str):
