@@ -51,17 +51,20 @@ class Game:
     @classmethod
     def troll_info(cls, arg_troll: "troll.Troll"):
         dialog.separate()
-        dialog.dialog(msg="Name: " + arg_troll.name)
-        dialog.dialog(msg="Level: " + str(arg_troll.attributes.level))
-        dialog.dialog(msg="Class: " + arg_troll.attributes.form.name)
-        dialog.dialog(msg="Strength: {0}".format(str(round(arg_troll.total_strength, 1))))
-        dialog.dialog(msg="Dexterity: {0}".format(str(round(arg_troll.total_dexterity, 1))))
-        dialog.dialog(
-            msg="Critical hit chance (phys): {0}%".format(str(round(arg_troll.total_phys_crit_chance * 100, 1))))
-        dialog.dialog(msg="Magic: {0}".format(str(round(arg_troll.total_magic, 1))))
-        dialog.dialog(msg="Intelligence: {0}".format(str(round(arg_troll.total_intelligence, 1))))
-        dialog.dialog(msg="Vitality: {0}".format(str(int(arg_troll.attributes.vitality))))
-        dialog.separate()
+        dialog.dialog(msg=f"Name: {arg_troll.name}\n"
+                          f"Level: {str(arg_troll.attributes.level)}\n"
+                          f"Class: {arg_troll.attributes.form.name}\n"
+                          f"\tAttribudes:\n"
+                          f"\t\tStrength: {str(arg_troll.total_strength)}\n"
+                          f"\t\tDexterity: {str(arg_troll.total_dexterity)}\n"
+                          f"\t\tCritical hit chance (phys): {str(arg_troll.total_phys_crit_chance*100)}\n"
+                          f"\t\tMagic: {str(arg_troll.total_magic)}\n"
+                          f"\t\tIntelligence: {str(arg_troll.total_intelligence)}\n"
+                          f"\t\tLife: {str(arg_troll.life)}/{str(arg_troll.total_vitality)}")
+        if arg_troll.weapon is not None:
+            dialog.dialog(msg=f"Weapon: {arg_troll.weapon.name} (X to see info)")
+        if arg_troll.armor is not None:
+            dialog.dialog(msg=f"Armor: {arg_troll.armor.name} (A to see info)")
 
     @classmethod
     def weapon_info(cls, arg_item: "item.Weapon"):
@@ -78,7 +81,7 @@ class Game:
                           f"\t\tDexterity: {str(arg_item.mods.dex_bonus)}\n"
                           f"\t\tMagic: {str(arg_item.mods.mag_bonus)}\n"
                           f"\t\tIntelligence: {str(arg_item.mods.int_bonus)}\n"
-                          f"\t\tCrit. Chance: {str(arg_item.mods.crit_bonus)}\n"
+                          f"\t\tCrit. Chance: {str(arg_item.mods.crit_bonus*100)}\n"
                           f"\t\tLife: {str(arg_item.mods.life_bonus)}\n"
                           f"Level: {arg_item.level}")
 

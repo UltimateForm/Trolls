@@ -94,6 +94,8 @@ class Armor(Item):
 
 
 if __name__ == "__main__":
+    print(bool(ItemTypes.EQUIPABLE & ItemTypes.SWORD))
+    exit()
     print(ItemTypes.WEAPON.value)
     print(Weapon.average_damage_for_level(100))
     exit()

@@ -45,6 +45,10 @@ def get_items():
                        primary_damage_type=pri_dmg_type,secondary_damage_type=sec_dmg_type,
                        tertiary_damage_type=ter_dmg_type, fire_resistance=fire_resis, cold_resistance=cold_resis,
                        electric_resistance=elect_resis, weight=weight)
+        if item.ItemTypes.is_weapon(i_type):
+            it.__class__ = item.Weapon
+        elif item.ItemTypes.is_armor(i_type):
+            it.__class__ = item.Armor
         it.id = i[0]
         items.append(it)
     connection.close()

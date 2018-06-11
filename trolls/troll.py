@@ -5,7 +5,7 @@ import time
 import numpy
 import game
 import inventory
-
+import item
 
 TROLL_ROGUE = "Rogue"
 TROLL_WARRIOR = "Warrior"
@@ -58,19 +58,19 @@ class Attributes:
 
     @property
     def strength(self):
-        return math.pow(self.level, self.form.str_mult)
+        return int(math.pow(self.level, self.form.str_mult))
 
     @property
     def dexterity(self):
-        return math.pow(self.level, self.form.dex_mult)
+        return int(math.pow(self.level, self.form.dex_mult))
 
     @property
     def magic(self):
-        return math.pow(self.level, self.form.magic_mult)
+        return int(math.pow(self.level, self.form.magic_mult))
 
     @property
     def intelligence(self):
-        return math.pow(self.level, self.form.intel_mult)
+        return int(math.pow(self.level, self.form.intel_mult))
 
     def add_exp(self, exp):
         self._exp += exp
@@ -90,6 +90,34 @@ class Mods:
         self.life_bonus = life_bonus
         self.crit_bonus = crit_bonus
 
+    @classmethod
+    def sum(cls, *args: "Mods") -> "Mods":
+        str_bonus = 0
+        dex_bonus = 0
+        mag_bonus = 0
+        int_bonus = 0
+        life_bonus = 0.0
+        crit_bonus = 0.0
+        for m in args:
+            if m is None:
+                continue
+            str_bonus += m.str_bonus
+            dex_bonus += m.dex_bonus
+            mag_bonus += m.mag_bonus
+            int_bonus += m.int_bonus
+            life_bonus += m.life_bonus
+            crit_bonus += m.crit_bonus
+        return Mods(str_bonus, dex_bonus, mag_bonus,int_bonus, life_bonus, crit_bonus)
+
+    @classmethod
+    def sum_item_mods(cls, *args: "item.Item") -> "Mods":
+        modarray =[]
+        for i in args:
+            if i is None:
+                continue
+            modarray.append(i.mods)
+        return cls.sum(*modarray)
+
 
 class Troll:
     """Handles trolls and stuffs"""
@@ -101,7 +129,6 @@ class Troll:
         self.attributes = Attributes(self.troll_class, 0)
         self.modifiers = Mods(0, 0, 0, 0, 0, 0)
         self.buffs = Mods(0, 0, 0, 0, 0, 0)
-        self.armor = 0
         self.bag = inventory.Inventory(self)
 
     def init_class(self, troll_class: "ClassFormula"):
@@ -111,27 +138,31 @@ class Troll:
 
     @property
     def total_strength(self):
-        return self.attributes.strength + self.modifiers.str_bonus + self.buffs.str_bonus
+        return self.attributes.strength + self.total_mods.str_bonus + self.buffs.str_bonus
 
     @property
     def total_dexterity(self):
-        return self.attributes.dexterity + self.modifiers.dex_bonus + self.buffs.dex_bonus
+        return self.attributes.dexterity + self.total_mods.dex_bonus + self.buffs.dex_bonus
 
     @property
     def total_magic(self):
-        return self.attributes.magic + self.modifiers.mag_bonus + self.buffs.mag_bonus
+        return self.attributes.magic + self.total_mods.mag_bonus + self.buffs.mag_bonus
 
     @property
     def total_intelligence(self):
-        return self.attributes.intelligence + self.modifiers.int_bonus + self.buffs.int_bonus
+        return self.attributes.intelligence + self.total_mods.int_bonus + self.buffs.int_bonus
 
     @property
     def total_phys_crit_chance(self):
-        return self.attributes.physical_critical_hit_chance + self.modifiers.crit_bonus + self.buffs.crit_bonus
+        return self.attributes.physical_critical_hit_chance + self.total_mods.crit_bonus + self.buffs.crit_bonus
 
     @property
     def life(self):
-        return self.attributes.vitality + self.modifiers.life_bonus + self.buffs.life_bonus
+        return self.attributes.vitality + self.total_mods.life_bonus + self.buffs.life_bonus
+
+    @property
+    def total_vitality(self):
+        return self.attributes.vitality + self.total_mods.life_bonus
 
     @property
     def weapon(self):
@@ -140,6 +171,24 @@ class Troll:
     @property
     def armor(self):
         return self.bag.equipped_armor
+
+    @property
+    def total_mods(self):
+        item_mods = Mods.sum_item_mods(self.weapon, self.armor)
+        total_mods = Mods.sum(self.modifiers, item_mods)
+        return total_mods
+
+    def equip(self, it: "item.Item"):
+        if not bool(item.ItemTypes.EQUIPABLE & it.item_type):
+            print(f"{it.name} is not equipable")
+            return
+        if isinstance(it, item.Weapon):
+            self.bag.equip_weapon(it)
+        elif isinstance(it, item.Armor):
+            self.bag.equip_armor(it)
+        else:
+            print("Could not equip " + str(it.__class__))
+
 
     @classmethod
     def create_classed_troll(cls, troll_class: "ClassFormula", troll_name: str):
@@ -185,9 +234,8 @@ class Troll:
     @classmethod
     def clash(cls, attacker: "Troll", defender: "Troll"):
         if attacker.troll_class == WARRIOR_FORM or attacker.troll_class == ROGUE_FORM:
-            free_weapon_dmg = 500
-            free_armor = 1000
-            damage = attacker.total_strength * (free_weapon_dmg / free_armor)
+
+            damage = attacker.total_strength * (attacker.weapon.damage / defender.armor.armor)
             damage *= 1 + random.uniform(-0.25, 0.25)
             damage = int(damage)
             print(attacker.name + "attacks... ", end="", flush=True)
@@ -203,7 +251,6 @@ class Troll:
                     print("CRITICAL HIT!! ", end="", flush=True)
                     damage *= 2
                 print(defender.name + " receives " + str(int(damage)) + " damage!")
-
                 defender.buffs.life_bonus -= damage
 
     @classmethod
@@ -212,11 +259,30 @@ class Troll:
 
 
 if __name__ == "__main__":
+    inventory.Inventory.populate_world()
+    thug = Troll("Jaffa")
+    thug.init_class(WARRIOR_FORM)
+    thug.add_exp(10 * 10)
+    thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(9))
+    thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(16))
+    game.Game.troll_info(thug)
+
+    thief = Troll("Yuri")
+    thief.init_class(ROGUE_FORM)
+    thief.add_exp(11 * 11)
+    thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(12))
+    thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(17))
+    game.Game.troll_info(thief)
+
+    input("Press enter to continue")
+
+    Troll.fight(thug, thief)
+    exit()
     c_attacker = Troll("Bully")
     c_defender = Troll("Youngster")
     c_attacker.init_class(WARRIOR_FORM)
     c_defender.init_class(ROGUE_FORM)
-    #random_exp = random.randint(1, 10001)
+    # random_exp = random.randint(1, 10001)
     random_exp = 10000
     print("Will add {0} exp to each troll".format(str(random_exp)))
     c_attacker.add_exp(random_exp)
