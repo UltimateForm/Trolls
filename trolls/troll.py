@@ -13,19 +13,29 @@ TROLL_SORCERER = "Sorcerer"
 
 
 class ClassFormula:
-    def __init__(self, name, str_mult: float, dex_mult: float, magic_mult: float, intel_mult: float, life_mult: float):
+    def __init__(self, name, weapon_type,
+                 str_mult: float, dex_mult: float, magic_mult: float, intel_mult: float, life_mult: float):
         self.name = name
         self.str_mult = str_mult
         self.dex_mult = dex_mult
         self.magic_mult = magic_mult
         self.intel_mult = intel_mult
         self.life_mult = life_mult
+        self.weapons = weapon_type
 
 
-DEVIANT_FORM = ClassFormula("Deviant", str_mult=1.2, dex_mult=1.2, magic_mult=1.2, intel_mult=1.2, life_mult=1.2)
-WARRIOR_FORM = ClassFormula(TROLL_WARRIOR, str_mult=1.5, dex_mult=1.25, magic_mult=0, intel_mult=0, life_mult=1.25)
-SORCERER_FORM = ClassFormula(TROLL_SORCERER, str_mult=0, dex_mult=0, magic_mult=1.5, intel_mult=1.4, life_mult=1.1)
-ROGUE_FORM = ClassFormula(TROLL_ROGUE, str_mult=1.3, dex_mult=1.4, magic_mult=0, intel_mult=1.1, life_mult=1.2)
+WARRIOR_WEAPON = item.ItemTypes.SWORD | item.ItemTypes.AXE | item.ItemTypes.MAUL
+ROGUE_WEAPON = item.ItemTypes.DAGGER | item.ItemTypes.BOW
+MAGE_WEAPON = item.ItemTypes.STAFF | item.ItemTypes.MAGIC_ORB | item.ItemTypes.TOME
+DEVIANT_FORM = ClassFormula("Deviant", item.ItemTypes.WEAPON,
+                            str_mult=1.2, dex_mult=1.2, magic_mult=1.2, intel_mult=1.2, life_mult=1.2)
+WARRIOR_FORM = ClassFormula(TROLL_WARRIOR, WARRIOR_WEAPON,
+                            str_mult=1.5, dex_mult=1.25, magic_mult=0, intel_mult=0, life_mult=1.25)
+SORCERER_FORM = ClassFormula(TROLL_SORCERER, MAGE_WEAPON,
+                             str_mult=0, dex_mult=0, magic_mult=1.5, intel_mult=1.4, life_mult=1.1)
+ROGUE_FORM = ClassFormula(TROLL_ROGUE, ROGUE_WEAPON,
+                          str_mult=1.3, dex_mult=1.4, magic_mult=0, intel_mult=1.1, life_mult=1.2)
+
 
 
 class Attributes:
@@ -107,11 +117,11 @@ class Mods:
             int_bonus += m.int_bonus
             life_bonus += m.life_bonus
             crit_bonus += m.crit_bonus
-        return Mods(str_bonus, dex_bonus, mag_bonus,int_bonus, life_bonus, crit_bonus)
+        return Mods(str_bonus, dex_bonus, mag_bonus, int_bonus, life_bonus, crit_bonus)
 
     @classmethod
     def sum_item_mods(cls, *args: "item.Item") -> "Mods":
-        modarray =[]
+        modarray = []
         for i in args:
             if i is None:
                 continue
@@ -173,6 +183,15 @@ class Troll:
         return self.bag.equipped_armor
 
     @property
+    def wear_weight(self):
+        weight = 0.0
+        if self.weapon is not None:
+            weight += self.weapon.weight
+        if self.armor is not None:
+            weight += self.armor.weight
+        return weight
+
+    @property
     def total_mods(self):
         item_mods = Mods.sum_item_mods(self.weapon, self.armor)
         total_mods = Mods.sum(self.modifiers, item_mods)
@@ -183,12 +202,14 @@ class Troll:
             print(f"{it.name} is not equipable")
             return
         if isinstance(it, item.Weapon):
+            if not bool(self.attributes.form.weapons & it.item_type):
+                print(f"{self.attributes.form.name} can't equip weapons of type {it.item_type.name}")
+                return
             self.bag.equip_weapon(it)
         elif isinstance(it, item.Armor):
             self.bag.equip_armor(it)
         else:
             print("Could not equip " + str(it.__class__))
-
 
     @classmethod
     def create_classed_troll(cls, troll_class: "ClassFormula", troll_name: str):
@@ -234,19 +255,21 @@ class Troll:
     @classmethod
     def clash(cls, attacker: "Troll", defender: "Troll"):
         if attacker.troll_class == WARRIOR_FORM or attacker.troll_class == ROGUE_FORM:
-
             damage = attacker.total_strength * (attacker.weapon.damage / defender.armor.armor)
             damage *= 1 + random.uniform(-0.25, 0.25)
             damage = int(damage)
-            print(attacker.name + "attacks... ", end="", flush=True)
+            o_weight_ratio = numpy.clip(1 - (attacker.wear_weight / defender.wear_weight), 0.0, 0.5)
+            d_weight_ratio = numpy.clip(1 - (defender.wear_weight / attacker.wear_weight), 0.0, 0.25)
+            print(attacker.name + " attacks... ", end="", flush=True)
             time.sleep(0.25)
-
             hit_chance = 0.9 * (attacker.total_dexterity / defender.total_dexterity)
+            hit_chance *= 1-d_weight_ratio
             hit_fail = random.random() > hit_chance
             if hit_fail:
                 print("But " + defender.name + " dodged!!")
             else:
-                critical_hit = random.random() < attacker.total_phys_crit_chance
+                battle_crit_hit = attacker.total_phys_crit_chance * (1+o_weight_ratio)
+                critical_hit = random.random() < battle_crit_hit
                 if critical_hit:
                     print("CRITICAL HIT!! ", end="", flush=True)
                     damage *= 2
@@ -262,15 +285,15 @@ if __name__ == "__main__":
     inventory.Inventory.populate_world()
     thug = Troll("Jaffa")
     thug.init_class(WARRIOR_FORM)
-    thug.add_exp(10 * 10)
+    thug.add_exp(100 * 100)
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(9))
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(16))
     game.Game.troll_info(thug)
 
     thief = Troll("Yuri")
     thief.init_class(ROGUE_FORM)
-    thief.add_exp(11 * 11)
-    thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(12))
+    thief.add_exp(10 * 10)
+    thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(11))
     thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(17))
     game.Game.troll_info(thief)
 

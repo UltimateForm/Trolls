@@ -65,6 +65,7 @@ class Game:
             dialog.dialog(msg=f"Weapon: {arg_troll.weapon.name} (X to see info)")
         if arg_troll.armor is not None:
             dialog.dialog(msg=f"Armor: {arg_troll.armor.name} (A to see info)")
+        dialog.dialog(msg="Wear weight: " + str(arg_troll.wear_weight))
 
     @classmethod
     def weapon_info(cls, arg_item: "item.Weapon"):
