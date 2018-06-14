@@ -76,13 +76,15 @@ class Game:
                           f"{arg_item.primary_damage_type.name if arg_item.primary_damage_type is not None else ''} " 
                           f"{arg_item.secondary_damage_type.name if arg_item.secondary_damage_type is not None else ''} "
                           f"{arg_item.tertiary_damage_type.name if arg_item.tertiary_damage_type is not None else ''}"
+                          f"\nHit chance: {str(arg_item.hit_chance*100)}%"
+                          f""
                           f"\n"
                           f"\tMods:\n"
                           f"\t\tStrength: {str(arg_item.mods.str_bonus)}\n"
                           f"\t\tDexterity: {str(arg_item.mods.dex_bonus)}\n"
                           f"\t\tMagic: {str(arg_item.mods.mag_bonus)}\n"
                           f"\t\tIntelligence: {str(arg_item.mods.int_bonus)}\n"
-                          f"\t\tCrit. Chance: {str(arg_item.mods.crit_bonus*100)}\n"
+                          f"\t\tCrit. Chance: {str(arg_item.mods.crit_bonus*100)}%\n"
                           f"\t\tLife: {str(arg_item.mods.life_bonus)}\n"
                           f"Level: {arg_item.level}")
 

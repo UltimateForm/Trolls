@@ -48,8 +48,9 @@ class Item:
         self.mods = mods
         self.armor = kwargs.get("armor")
         self.block_chance = kwargs.get("block_chance")
-        self.damage = kwargs.get("damage")
 
+        self.damage = kwargs.get("damage")
+        self.hit_chance = kwargs.get("hit_chance")
         self.primary_damage_type = kwargs.get("primary_damage_type")
         self.secondary_damage_type = kwargs.get("secondary_damage_type")
         self.tertiary_damage_type = kwargs.get("tertiary_damage_type")
@@ -66,13 +67,13 @@ class Item:
 class Weapon(Item):
     def __init__(self, name: str, level: int, mods: "troll.Mods", w_type: "ItemTypes", damage: float,
                  primary_damage_type: "damage.Damage", secondary_damage_type=None, tertiary_damage_type=None,
-                 block_chance=0, weight=1):
+                 block_chance=0, weight=1, hit_chance=1):
         if not ItemTypes.is_weapon(w_type):
             print(f"{name} provided weapon type is not valid, received {w_type}, expected {ItemTypes.WEAPON} or less.")
             return
         super().__init__(name, w_type, level, mods, block_chance=block_chance, damage=damage,
                          primary_damage_type=primary_damage_type, secondary_damage_type=secondary_damage_type,
-                         tertiary_damage_type=tertiary_damage_type, weight=weight)
+                         tertiary_damage_type=tertiary_damage_type, weight=weight, hit_chance=hit_chance)
 
     @classmethod
     def average_damage_for_level(cls, level: int):
@@ -86,7 +87,7 @@ class Armor(Item):
             print(f"{name} provided armor type is not valid, received {a_type}, expected {ItemTypes.ARMOR} or less.")
             return
         super().__init__(name, a_type, level, mods, block_chance=block_chance, armor=armor, fire_resistance=fire_resis,
-                         cold_resistance=cold_resis, electric_resistance=electic_resis,weight=weight)
+                         cold_resistance=cold_resis, electric_resistance=electic_resis, weight=weight)
 
     @classmethod
     def average_armor_for_level(cls, level: int):
@@ -94,7 +95,7 @@ class Armor(Item):
 
 
 if __name__ == "__main__":
-    print(bool(ItemTypes.EQUIPABLE & ItemTypes.SWORD))
+    print(Weapon.average_damage_for_level(100))
     exit()
     print(ItemTypes.WEAPON.value)
     print(Weapon.average_damage_for_level(100))

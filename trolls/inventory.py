@@ -71,12 +71,9 @@ class Inventory(list):
         cls.WORLDBAG = Inventory(None, *dbitems)
 
 if __name__ == "__main__":
-    items = dbinterface.get_items()
-    bag = Inventory()
-    for ii in items:
-        bag.store(ii)
-    weap = bag.get_item_by_id(15)
-    bag.equip_weapon(weap)
-    print(weap)
+    Inventory.populate_world()
+    bow = Inventory.WORLDBAG.get_item_by_id(12)
+    game.Game.weapon_info(bow)
+
     #game.Game.weapon_info(bag.get_item_by_id(6))
 

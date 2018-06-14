@@ -41,10 +41,11 @@ def get_items():
         cold_resis = i[12]
         elect_resis = i[13]
         weight = i[14]
+        hit_chance = i[15]
         it = item.Item(name, i_type, level, mods, armor=armor,block_chance=block_chance,damage=dmg,
                        primary_damage_type=pri_dmg_type,secondary_damage_type=sec_dmg_type,
                        tertiary_damage_type=ter_dmg_type, fire_resistance=fire_resis, cold_resistance=cold_resis,
-                       electric_resistance=elect_resis, weight=weight)
+                       electric_resistance=elect_resis, weight=weight, hit_chance=hit_chance)
         if item.ItemTypes.is_weapon(i_type):
             it.__class__ = item.Weapon
         elif item.ItemTypes.is_armor(i_type):

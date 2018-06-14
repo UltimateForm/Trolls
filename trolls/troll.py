@@ -262,12 +262,18 @@ class Troll:
             d_weight_ratio = numpy.clip(1 - (defender.wear_weight / attacker.wear_weight), 0.0, 0.25)
             print(attacker.name + " attacks... ", end="", flush=True)
             time.sleep(0.25)
-            hit_chance = 0.9 * (attacker.total_dexterity / defender.total_dexterity)
+
+            hit_chance = attacker.weapon.hit_chance * (attacker.total_dexterity / defender.total_dexterity)
             hit_chance *= 1-d_weight_ratio
             hit_fail = random.random() > hit_chance
             if hit_fail:
                 print("But " + defender.name + " dodged!!")
             else:
+                block_chance = defender.weapon.block_chance
+                blocked = random.random() <= block_chance
+                if blocked:
+                    print("But " + defender.name + " blocked the attack!!")
+                    return
                 battle_crit_hit = attacker.total_phys_crit_chance * (1+o_weight_ratio)
                 critical_hit = random.random() < battle_crit_hit
                 if critical_hit:
@@ -285,7 +291,7 @@ if __name__ == "__main__":
     inventory.Inventory.populate_world()
     thug = Troll("Jaffa")
     thug.init_class(WARRIOR_FORM)
-    thug.add_exp(100 * 100)
+    thug.add_exp(10 * 10)
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(9))
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(16))
     game.Game.troll_info(thug)
@@ -293,7 +299,7 @@ if __name__ == "__main__":
     thief = Troll("Yuri")
     thief.init_class(ROGUE_FORM)
     thief.add_exp(10 * 10)
-    thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(11))
+    thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(18))
     thief.equip(inventory.Inventory.WORLDBAG.get_item_by_id(17))
     game.Game.troll_info(thief)
 
