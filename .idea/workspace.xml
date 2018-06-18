@@ -3,30 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8e498c01-c4fc-4067-83f6-b0d862944fc7" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/dbinterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/dbinterface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/inventory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/item.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trolls/troll.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/troll.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsconfig.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items.db" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Assassin Initiate Dagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Assassin Initiate Dagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Assassin Initiate Garb.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Assassin Initiate Garb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Dirty Rags.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Dirty Rags.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Imaginary Orb.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Imaginary Orb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Imaginary Robes.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Imaginary Robes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Invisible Staff of Never-Ending Might.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Invisible Staff of Never-Ending Might.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Old Copper Sword.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Old Copper Sword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Ravager Initiate Hide Armor.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Ravager Initiate Hide Armor.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Ravager Initiate Sword.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Ravager Initiate Sword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Rusty Iron Sword.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Rusty Iron Sword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Shank.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Shank.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Slightly Magic Paper.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Slightly Magic Paper.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Stolen Human Kitchen Knife.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Stolen Human Kitchen Knife.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Stolen Human Sword.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Stolen Human Sword.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Stone Dagger.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Stone Dagger.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Tree Branch.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Tree Branch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trollsdata/items/Tree Splinter.json" beforeDir="false" afterPath="$PROJECT_DIR$/trollsdata/items/Tree Splinter.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +14,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Imaginary Robes.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Imaginary Robes.json">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="Old Copper Sword.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trollsdata/items/Old Copper Sword.json">
           <provider selected="true" editor-type-id="text-editor" />
@@ -50,8 +22,8 @@
       <file leaf-file-name="item.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/item.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1557">
-              <caret line="97" column="4" lean-forward="true" selection-start-line="97" selection-start-column="4" selection-end-line="108" selection-end-column="53" />
+            <state relative-caret-position="1581">
+              <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="108" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -59,8 +31,8 @@
       <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/game.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
+            <state relative-caret-position="1377">
+              <caret line="86" column="78" selection-start-line="86" selection-start-column="78" selection-end-line="86" selection-end-column="78" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -68,43 +40,47 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="troll.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="troll.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/troll.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="626">
-              <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
+            <state relative-caret-position="-1231">
+              <caret line="147" column="13" lean-forward="true" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Assassin Initiate Bow.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Assassin Initiate Bow.json">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/lettuce/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="3383">
+              <caret line="202" column="47" selection-start-line="202" selection-start-column="47" selection-end-line="202" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Imaginary Orb.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trollsdata/items/Imaginary Orb.json">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="core.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/lettuce/core.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="leveling.feature" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/features/leveling.feature">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="inventory.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/inventory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
+            <state relative-caret-position="1207">
               <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dbinterface.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="724">
-              <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -153,7 +129,13 @@
         <option value="$PROJECT_DIR$/trolls/item.py" />
         <option value="$PROJECT_DIR$/trolls/inventory.py" />
         <option value="$PROJECT_DIR$/trolls/game.py" />
+        <option value="$PROJECT_DIR$/trolls/calculator.py" />
+        <option value="$PROJECT_DIR$/tests/calculator.feature.py" />
+        <option value="$PROJECT_DIR$/tests/features/calculator.feature" />
+        <option value="$PROJECT_DIR$/tests/features/calculator.feature.steps.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/lettuce/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/troll.py" />
+        <option value="$PROJECT_DIR$/tests/features/leveling.feature" />
       </list>
     </option>
   </component>
@@ -174,6 +156,17 @@
             <path>
               <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
               <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="features" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
@@ -200,6 +193,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -222,7 +216,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.troll">
-    <configuration name="dbinterface" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="calculator.feature.steps" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Trolls" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -230,11 +224,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trolls" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/features" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trolls/dbinterface.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/features/calculator.feature.steps.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -315,17 +309,17 @@
     <list>
       <item itemvalue="Python.item (1)" />
       <item itemvalue="Python.game" />
-      <item itemvalue="Python.dbinterface" />
       <item itemvalue="Python.troll" />
       <item itemvalue="Python.inventory" />
+      <item itemvalue="Python.calculator.feature.steps" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.troll" />
+        <item itemvalue="Python.calculator.feature.steps" />
         <item itemvalue="Python.inventory" />
         <item itemvalue="Python.game" />
         <item itemvalue="Python.item (1)" />
-        <item itemvalue="Python.dbinterface" />
       </list>
     </recent_temporary>
   </component>
@@ -374,7 +368,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.119791664" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -392,6 +386,25 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28840718" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -409,13 +422,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scritps/game.py" />
-    <entry file="file://$PROJECT_DIR$/scritps/item.py" />
-    <entry file="file://$PROJECT_DIR$/scritps/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/scritps/troll.py" />
-    <entry file="file://$PROJECT_DIR$/scripts/config.cfg" />
-    <entry file="file://$PROJECT_DIR$/scripts/damage.py" />
-    <entry file="file://$PROJECT_DIR$/scripts/game.py" />
     <entry file="file://$PROJECT_DIR$/scripts/instance.py" />
     <entry file="file://$PROJECT_DIR$/scripts/dialog.py" />
     <entry file="file://$PROJECT_DIR$/scripts/station.py" />
@@ -478,7 +484,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="724">
+        <state relative-caret-position="731">
           <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
         </state>
       </provider>
@@ -486,7 +492,7 @@
     <entry file="file://$PROJECT_DIR$/trollsdata/items/Assassin Initiate Bow.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -504,32 +510,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trolls/inventory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
+        <state relative-caret-position="1207">
           <caret line="74" column="46" selection-start-line="74" selection-start-column="46" selection-end-line="74" selection-end-column="46" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1581">
+          <caret line="97" column="4" selection-start-line="97" selection-start-column="4" selection-end-line="108" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/calculator.feature.py" />
+    <entry file="file://$PROJECT_DIR$/trolls/calculator.py" />
+    <entry file="file://$PROJECT_DIR$/tests/features/calculator.feature" />
     <entry file="file://$PROJECT_DIR$/trolls/game.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="72" column="62" lean-forward="true" selection-start-line="72" selection-start-column="62" selection-end-line="72" selection-end-column="62" />
+        <state relative-caret-position="1377">
+          <caret line="86" column="78" selection-start-line="86" selection-start-column="78" selection-end-line="86" selection-end-column="78" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/item.py">
+    <entry file="file://$PROJECT_DIR$/tests/features/calculator.feature.steps.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/lettuce/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1557">
-          <caret line="97" column="4" lean-forward="true" selection-start-line="97" selection-start-column="4" selection-end-line="108" selection-end-column="53" />
+        <state relative-caret-position="3383">
+          <caret line="202" column="47" selection-start-line="202" selection-start-column="47" selection-end-line="202" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/lettuce/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trolls/troll.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="283" lean-forward="true" selection-start-line="283" selection-end-line="283" />
+        <state relative-caret-position="-1231">
+          <caret line="147" column="13" lean-forward="true" selection-start-line="147" selection-start-column="13" selection-end-line="147" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/features/leveling.feature">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
         </state>
       </provider>
     </entry>

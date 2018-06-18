@@ -52,7 +52,7 @@ class Attributes:
 
     @property
     def level(self):
-        return int(math.sqrt(self.exp))
+        return numpy.clip(int(math.sqrt(self.exp)), 1, 100)
 
     @property
     def form(self):
@@ -134,7 +134,6 @@ class Troll:
 
     def __init__(self, name: str):
         self.name = str(name)
-        self.level = 1
         self.troll_class = DEVIANT_FORM
         self.attributes = Attributes(self.troll_class, 0)
         self.modifiers = Mods(0, 0, 0, 0, 0, 0)
@@ -145,6 +144,10 @@ class Troll:
         """Initiates Troll class, modifying atributes"""
         self.attributes.change_class(troll_class)
         self.troll_class = troll_class
+
+    @property
+    def level(self):
+        return self.attributes.level
 
     @property
     def total_strength(self):
@@ -292,6 +295,7 @@ if __name__ == "__main__":
     thug = Troll("Jaffa")
     thug.init_class(WARRIOR_FORM)
     thug.add_exp(10 * 10)
+    exit()
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(9))
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(16))
     game.Game.troll_info(thug)
