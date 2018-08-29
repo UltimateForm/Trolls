@@ -1,8 +1,5 @@
 from enum import IntFlag
 import math
-import game
-import troll
-import damage
 
 
 class ItemTypes(IntFlag):
@@ -95,6 +92,10 @@ class Armor(Item):
 
 
 if __name__ == "__main__":
+    import game
+    import troll
+    import damage
+
     print(Weapon.average_damage_for_level(100))
     exit()
     print(ItemTypes.WEAPON.value)

@@ -1,9 +1,5 @@
 import sqlite3
 import os
-import item
-import troll
-import damage
-
 
 db_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\trollsdata\\items.db"
 
@@ -57,4 +53,7 @@ def get_items():
 
 
 if __name__ == "__main__":
+    import trolls.item as item
+    import trolls.troll as troll
+    import trolls.damage as damage
     get_items()

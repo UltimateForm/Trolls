@@ -1,7 +1,3 @@
-import troll
-import item
-import dbinterface
-import game
 
 
 class Inventory(list):
@@ -12,7 +8,6 @@ class Inventory(list):
         self._owner = owner
         self._equipped_weapon = None
         self._equipped_armor = None
-        print(str(len(args)) + " inv")
         for i in args:
             self.store(i)
 
@@ -71,6 +66,11 @@ class Inventory(list):
         cls.WORLDBAG = Inventory(None, *dbitems)
 
 if __name__ == "__main__":
+    import trolls.troll as troll
+    import trolls.item as item
+    import trolls.dbinterface as dbinterface
+    import trolls.game as game
+
     Inventory.populate_world()
     bow = Inventory.WORLDBAG.get_item_by_id(12)
     game.Game.weapon_info(bow)

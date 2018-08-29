@@ -1,10 +1,5 @@
-import troll
-import dialog
-import item
 import jsonpickle
 import os
-import dbinterface
-
 
 TROLL_NPC_DATA = 1
 TROLL_BOSS_DATA = 2
@@ -130,4 +125,8 @@ class Game:
         return Game.deserialize(Game.BOSS_DATA + file_name)
 
 if __name__ == "__main__":
+    import dbinterface
+    import troll
+    import dialog
+    import item
     Game.start()

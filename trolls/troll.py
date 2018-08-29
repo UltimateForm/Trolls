@@ -3,9 +3,10 @@ import math
 import random
 import time
 import numpy
-import game
-import inventory
-import item
+import trolls.game as game
+import trolls.dbinterface as dbinterface
+import trolls.inventory as inventory
+import trolls.item as item
 
 TROLL_ROGUE = "Rogue"
 TROLL_WARRIOR = "Warrior"
@@ -295,6 +296,7 @@ if __name__ == "__main__":
     thug = Troll("Jaffa")
     thug.init_class(WARRIOR_FORM)
     thug.add_exp(10 * 10)
+    game.Game.troll_info(thug)
     exit()
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(9))
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(16))
