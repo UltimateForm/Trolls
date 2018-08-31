@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e498c01-c4fc-4067-83f6-b0d862944fc7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/features/steps/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/features/leveling.feature" beforeDir="false" afterPath="$PROJECT_DIR$/tests/features/leveling.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/dbinterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/dbinterface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trolls/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__main__" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/features/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/__main__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/features/leveling.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/features/steps/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/features/steps/leveling.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/dbinterface.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/dbextractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/instance.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/instance.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trolls/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trolls/item.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/item.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trolls/npc.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/npc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trolls/troll.py" beforeDir="false" afterPath="$PROJECT_DIR$/trolls/troll.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="troll.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="troll.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/trolls/troll.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="294" selection-start-line="294" selection-end-line="294" />
+            <state relative-caret-position="333">
+              <caret line="266" column="69" lean-forward="true" selection-start-line="266" selection-start-column="69" selection-end-line="266" selection-end-column="69" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -35,44 +41,43 @@
       <file leaf-file-name="inventory.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trolls/inventory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="102">
+              <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/features/steps/__init__.py">
+        <entry file="file://$PROJECT_DIR$/features/__init__.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="config.cfg" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/config.cfg">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="damage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/damage.py">
+      <file leaf-file-name="__main__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/__main__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="34">
+              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dbinterface.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
+      <file leaf-file-name="dbextractor.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/dbextractor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="639">
-              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="22" selection-end-column="18" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-527">
+              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -82,21 +87,30 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/trolls/test.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="game.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trolls/game.py">
+      <file leaf-file-name="item.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/item.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2158">
-              <caret line="127" column="22" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
+            <state relative-caret-position="696">
+              <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="instance.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/instance.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="30" selection-start-column="30" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="station.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/trolls/station.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -114,7 +128,11 @@
       <find>fi</find>
       <find>random</find>
       <find>inv</find>
+      <find>dbinterface</find>
     </findStrings>
+    <dirStrings>
+      <dir>C:\Users\aromnelio\Documents\_helio.personal\Trolls\trolls</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -135,11 +153,7 @@
         <option value="$PROJECT_DIR$/scripts/troll.py" />
         <option value="$PROJECT_DIR$/scripts/__init__.py" />
         <option value="$PROJECT_DIR$/scripts/item.py" />
-        <option value="$PROJECT_DIR$/trolls/instance.py" />
-        <option value="$PROJECT_DIR$/trolls/npc.py" />
-        <option value="$PROJECT_DIR$/trolls/test.py" />
         <option value="$PROJECT_DIR$/trolls/damage.py" />
-        <option value="$PROJECT_DIR$/trolls/__init__.py" />
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/calculator.py" />
         <option value="$PROJECT_DIR$/tests/calculator.feature.py" />
@@ -149,17 +163,33 @@
         <option value="$PROJECT_DIR$/tests/features/leveling.feature" />
         <option value="$PROJECT_DIR$/tests/features/steps/steps.py" />
         <option value="$PROJECT_DIR$/tests/features/tutorial.feature" />
-        <option value="$PROJECT_DIR$/tests/features/steps/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/tests/features/steps/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/tests/features/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/tests/__init__.py" />
         <option value="$PROJECT_DIR$/trolls/tests/features/steps/tutorial.py" />
-        <option value="$PROJECT_DIR$/trolls/game.py" />
         <option value="$PROJECT_DIR$/trolls/item.py" />
         <option value="$PROJECT_DIR$/tests/features/steps/tutorial.py" />
+        <option value="$PROJECT_DIR$/trolls/dbinterface.py" />
+        <option value="$PROJECT_DIR$/trolls/game.py" />
+        <option value="$PROJECT_DIR$/trolls/setup.py" />
+        <option value="$PROJECT_DIR$/trolls/dbextractor.py" />
+        <option value="$PROJECT_DIR$/trolls/__main__.py" />
+        <option value="$PROJECT_DIR$/trolls/tests/features/steps/leveling.py" />
+        <option value="$PROJECT_DIR$/tests/__main__.py" />
+        <option value="$PROJECT_DIR$/trolls/__mconfig.cfg" />
+        <option value="$PROJECT_DIR$/tests/__init__.py" />
+        <option value="$PROJECT_DIR$/tests/features/steps/__init__.py" />
+        <option value="$PROJECT_DIR$/tests/features/__init__.py" />
+        <option value="$PROJECT_DIR$/tests/features/steps/leveling.py" />
+        <option value="$PROJECT_DIR$/tests/features/steps/steps_leveling.py" />
+        <option value="$PROJECT_DIR$/features/steps/steps_leveling.py" />
+        <option value="$PROJECT_DIR$/trolls/__init__.py" />
+        <option value="$PROJECT_DIR$/trolls/npc.py" />
+        <option value="$PROJECT_DIR$/trolls/instance.py" />
+        <option value="$PROJECT_DIR$/trolls/main.py" />
+        <option value="$PROJECT_DIR$/trolls/test.py" />
         <option value="$PROJECT_DIR$/trolls/inventory.py" />
         <option value="$PROJECT_DIR$/trolls/troll.py" />
-        <option value="$PROJECT_DIR$/trolls/dbinterface.py" />
       </list>
     </option>
   </component>
@@ -185,18 +215,11 @@
             <path>
               <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
               <item name="Trolls" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
               <item name="Trolls" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
               <item name="steps" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -204,6 +227,11 @@
               <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
               <item name="Trolls" type="462c0819:PsiDirectoryNode" />
               <item name="trolls" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Trolls" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Trolls" type="462c0819:PsiDirectoryNode" />
+              <item name="trollsdata" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -392,6 +420,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.28840718" />
@@ -405,26 +434,25 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119791664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28840718" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32987747" />
-      <window_info anchor="bottom" id="Python Console" order="7" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -441,7 +469,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/trolls/dbinterface.py</url>
+          <url>file://$PROJECT_DIR$/trolls/dbextractor.py</url>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -449,19 +477,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trollsdata/other/Fiery Rod.json" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/enum.py" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Ravager Initiate Sword.json" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Dirty Rags.json" />
-    <entry file="file://$PROJECT_DIR$/trolls/station.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Assassin Initiate Garb.json" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Tree Splinter.json" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Stone Dagger.json" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Slightly Magic Paper.json" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Rusty Iron Sword.json" />
-    <entry file="file://$PROJECT_DIR$/trollsdata/items/Stolen Human Kitchen Knife.json" />
     <entry file="file://$PROJECT_DIR$/trollsdata/items/Ravager Initiate Hide Armor.json" />
     <entry file="file://$PROJECT_DIR$/trollsdata/items/Invisible Staff of Never-Ending Might.json">
       <provider selected="true" editor-type-id="text-editor" />
@@ -505,12 +520,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/features/leveling.feature" />
     <entry file="file://$PROJECT_DIR$/tests/features/steps/steps.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/lettuce/core.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/tests/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/trolls/tests/features/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/trolls/tests/features/steps/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/trolls/tests/features/steps/tutorial.py" />
+    <entry file="file://$PROJECT_DIR$/trolls/tests/features/tutorial.feature" />
+    <entry file="file://$PROJECT_DIR$/tests/features/tutorial.feature" />
+    <entry file="file://$PROJECT_DIR$/tests/features/steps/tutorial.py" />
+    <entry file="file://$PROJECT_DIR$/trolls/damage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/config.cfg">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/tests/features/steps/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -520,94 +564,78 @@
     <entry file="file://$PROJECT_DIR$/trolls/tests/features/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/__init__.py">
+    <entry file="file://$PROJECT_DIR$/tests/__main__">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/tests/features/steps/__init__.py">
+    <entry file="file://$PROJECT_DIR$/trolls/__mconfig.cfg">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/tests/features/steps/tutorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/tests/features/tutorial.feature">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/features/tutorial.feature">
+    <entry file="file://$PROJECT_DIR$/tests/__main__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/npc.py">
+    <entry file="file://$PROJECT_DIR$/features/leveling.feature">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/item.py">
+    <entry file="file://$PROJECT_DIR$/features/steps/steps_leveling.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="96" column="17" lean-forward="true" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/features/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/features/steps/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/features/steps/tutorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="36" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        <state relative-caret-position="51">
+          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/damage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/dialog.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2158">
-          <caret line="127" column="22" selection-start-line="127" selection-start-column="22" selection-end-line="127" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trolls/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/config.cfg">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/dbinterface.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
+        <state>
+          <caret column="88" selection-start-column="88" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/npc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/test.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/steps/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/instance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/station.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/dialog.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/dbextractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="22" selection-end-column="18" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -616,23 +644,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/trolls/inventory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
+        <state relative-caret-position="102">
+          <caret line="33" column="43" lean-forward="true" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/item.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="96" column="17" selection-start-line="96" selection-start-column="17" selection-end-line="96" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trolls/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trolls/troll.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="294" selection-start-line="294" selection-end-line="294" />
+        <state relative-caret-position="333">
+          <caret line="266" column="69" lean-forward="true" selection-start-line="266" selection-start-column="69" selection-end-line="266" selection-end-column="69" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trolls/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

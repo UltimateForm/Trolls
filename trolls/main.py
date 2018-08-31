@@ -1,5 +1,6 @@
 import jsonpickle
 import os
+from trolls import dbextractor, troll, dialog
 
 TROLL_NPC_DATA = 1
 TROLL_BOSS_DATA = 2
@@ -40,7 +41,7 @@ class Game:
                 os.mkdir(Game.MAIN_DATA + "instance/")
                 os.mkdir(Game.MAIN_DATA + "player/")
                 os.mkdir(Game.MAIN_DATA + "items/")
-            for i in dbinterface.get_items():
+            for i in dbextractor.get_items():
                 cls.serialize(i, TROLL_ITEMS_DATA)
 
     @classmethod
@@ -68,7 +69,7 @@ class Game:
         dialog.dialog(msg=f"Type: {arg_item.item_type.name}\n"
                           f"Name: {arg_item.name}\n"
                           f"Damage: {arg_item.damage} "
-                          f"{arg_item.primary_damage_type.name if arg_item.primary_damage_type is not None else ''} " 
+                          f"{arg_item.primary_damage_type.name if arg_item.primary_damage_type is not None else ''} "
                           f"{arg_item.secondary_damage_type.name if arg_item.secondary_damage_type is not None else ''} "
                           f"{arg_item.tertiary_damage_type.name if arg_item.tertiary_damage_type is not None else ''}"
                           f"\nHit chance: {str(arg_item.hit_chance*100)}%"
@@ -84,7 +85,7 @@ class Game:
                           f"Level: {arg_item.level}")
 
     @classmethod
-    def gear_info(cls, arg_item : "item.Gear"):
+    def gear_info(cls, arg_item: "item.Gear"):
         pass
 
     @classmethod
@@ -125,8 +126,4 @@ class Game:
         return Game.deserialize(Game.BOSS_DATA + file_name)
 
 if __name__ == "__main__":
-    import dbinterface
-    import troll
-    import dialog
-    import item
     Game.start()

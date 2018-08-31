@@ -1,3 +1,4 @@
+from trolls import dbextractor, item
 
 
 class Inventory(list):
@@ -62,18 +63,17 @@ class Inventory(list):
 
     @classmethod
     def populate_world(cls):
-        dbitems = dbinterface.get_items()
+        dbitems = dbextractor.get_items()
         cls.WORLDBAG = Inventory(None, *dbitems)
+
 
 if __name__ == "__main__":
     import trolls.troll as troll
     import trolls.item as item
-    import trolls.dbinterface as dbinterface
-    import trolls.game as game
+    import trolls.main as game
 
     Inventory.populate_world()
     bow = Inventory.WORLDBAG.get_item_by_id(12)
     game.Game.weapon_info(bow)
 
-    #game.Game.weapon_info(bag.get_item_by_id(6))
-
+    # game.Game.weapon_info(bag.get_item_by_id(6))

@@ -1,15 +1,12 @@
 from behave import *
 import random
 import math
-import trolls.game
-import trolls.item
-import trolls.inventory
-import trolls.troll
+from trolls import *
 
 
 @given('mytroll.level is 1')
 def step_impl(context):
-    trl = trolls.troll.Troll("Tester")
+    trl = troll.Troll("Tester")
     context.mytroll = trl
     assert context.mytroll.level == 1
 
@@ -23,3 +20,4 @@ def step_impl(context):
 @then('mytroll.level becomes rounded integer square root of X, minimum 1')
 def step_impl(context):
     assert context.mytroll.level == int(math.sqrt(context.rand_X))
+

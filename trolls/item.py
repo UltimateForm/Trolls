@@ -92,7 +92,7 @@ class Armor(Item):
 
 
 if __name__ == "__main__":
-    import game
+    import main
     import troll
     import damage
 
@@ -102,9 +102,9 @@ if __name__ == "__main__":
     print(Weapon.average_damage_for_level(100))
     exit()
     weap = Weapon("Simple sword", 10, troll.Mods(4, 2, 0, 0, 40, 1.5), ItemTypes.AXE, 6515, damage.Damage.PHYSICAL)
-    game.Game.weapon_info(weap)
+    main.Game.weapon_info(weap)
 
     weap2 = Weapon("Fiery Rod", 10, troll.Mods(0, 0, 5, 1, 10, 0.5), ItemTypes.STAFF, 1231231,
                    damage.Damage.MAGIC | damage.Damage.COLD | damage.Damage.PROJECTILE)
-    game.Game.weapon_info(weap2)
-    game.Game.serialize(weap2, game.TROLL_ITEMS_DATA)
+    main.Game.weapon_info(weap2)
+    main.Game.serialize(weap2, main.TROLL_ITEMS_DATA)

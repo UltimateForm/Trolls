@@ -3,10 +3,8 @@ import math
 import random
 import time
 import numpy
-import trolls.game as game
-import trolls.dbinterface as dbinterface
-import trolls.inventory as inventory
 import trolls.item as item
+from trolls import inventory
 
 TROLL_ROGUE = "Rogue"
 TROLL_WARRIOR = "Warrior"
@@ -259,7 +257,9 @@ class Troll:
     @classmethod
     def clash(cls, attacker: "Troll", defender: "Troll"):
         if attacker.troll_class == WARRIOR_FORM or attacker.troll_class == ROGUE_FORM:
-            damage = attacker.total_strength * (attacker.weapon.damage / defender.armor.armor)
+            damage = attacker.total_strength * ((attacker.weapon.damage if attacker.weapon is not None else 1) / defender.armor.armor)
+            if attacker.weapon is not None:
+                print(damage)
             damage *= 1 + random.uniform(-0.25, 0.25)
             damage = int(damage)
             o_weight_ratio = numpy.clip(1 - (attacker.wear_weight / defender.wear_weight), 0.0, 0.5)
@@ -267,13 +267,13 @@ class Troll:
             print(attacker.name + " attacks... ", end="", flush=True)
             time.sleep(0.25)
 
-            hit_chance = attacker.weapon.hit_chance * (attacker.total_dexterity / defender.total_dexterity)
+            hit_chance = attacker.weapon.hit_chance if attacker.weapon is not None else 0 * (attacker.total_dexterity / defender.total_dexterity)
             hit_chance *= 1-d_weight_ratio
             hit_fail = random.random() > hit_chance
             if hit_fail:
                 print("But " + defender.name + " dodged!!")
             else:
-                block_chance = defender.weapon.block_chance
+                block_chance = defender.weapon.block_chance if defender.weapon is not None else 0
                 blocked = random.random() <= block_chance
                 if blocked:
                     print("But " + defender.name + " blocked the attack!!")
@@ -290,18 +290,15 @@ class Troll:
     def apply_npc_tier(cls, npc_troll):
         pass
 
-
 if __name__ == "__main__":
+    import trolls.main as game
     inventory.Inventory.populate_world()
     thug = Troll("Jaffa")
-    thug.init_class(WARRIOR_FORM)
+    thug.init_class(ROGUE_FORM)
     thug.add_exp(10 * 10)
-    game.Game.troll_info(thug)
-    exit()
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(9))
     thug.equip(inventory.Inventory.WORLDBAG.get_item_by_id(16))
     game.Game.troll_info(thug)
-
     thief = Troll("Yuri")
     thief.init_class(ROGUE_FORM)
     thief.add_exp(10 * 10)

@@ -1,10 +1,13 @@
 import sqlite3
 import os
+import trolls.item as item
+import trolls.troll as troll
+import trolls.damage as damage
 
-db_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\trollsdata\\items.db"
-
+db_path: str = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) + "\\trollsdata\\items.db"
 
 def get_items():
+    print(db_path)
     connection = sqlite3.connect(db_path)
     items = []
     for i in connection.execute('SELECT * FROM Item'):
@@ -53,7 +56,4 @@ def get_items():
 
 
 if __name__ == "__main__":
-    import trolls.item as item
-    import trolls.troll as troll
-    import trolls.damage as damage
     get_items()

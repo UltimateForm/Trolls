@@ -1,4 +1,4 @@
-import game, troll
+from trolls import troll
 
 TIER_CIVILIAN = 1
 TIER_INITIATE = 2
@@ -29,10 +29,12 @@ class npc:
 
 
 if __name__ == "__main__":
+    import trolls.main as main
     my_npc = npc("MY_WARRIOR_TROLL", troll_class=troll.TROLL_WARRIOR, level=10)
-    game.Game.troll_info(my_npc.troll)
+    main.Game.troll_info(my_npc.troll)
     my_npc = npc("MY_ROGUE_TROLL", troll_class=troll.TROLL_ROGUE, level=10)
-    game.Game.troll_info(my_npc.troll)
+    main.Game.troll_info(my_npc.troll)
     my_npc = npc("MY_SORCERER_TROLL", troll_class=troll.TROLL_SORCERER, level=10)
-    game.Game.troll_info(my_npc.troll)
-    game.Game.serialize(my_npc.troll, game.TROLL_OTHER_DATA)
+    main.Game.troll_info(my_npc.troll)
+    main.Game.serialize(my_npc.troll, main.TROLL_OTHER_DATA)
+
